@@ -10,7 +10,7 @@ public class gameControl{
     //////////////////////
 
     ///////////////////////
-    // Constructors
+    // Constructor(s)
     //////////////////////
     public gameControl(){
 
