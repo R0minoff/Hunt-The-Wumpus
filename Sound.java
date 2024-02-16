@@ -1,7 +1,7 @@
 // Amrit Gill
-// February 12, 2024
+// February 16, 2024
 // Period 5
-// Hunt the Wumpus - Sound Class
+// Hunt the Wumpus
 
 public class Sound {
     ///////////////////////
@@ -12,7 +12,6 @@ public class Sound {
     // Constructor(s)
     //////////////////////
     public Sound(){
-        
     }
     ///////////////////////
     // Methods
