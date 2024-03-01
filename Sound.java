@@ -19,7 +19,7 @@ public class Sound {
     //////////////////////
 
     // This method is the sound for when the player dies
-    public void DeathSouth(){
+    public void DeathSound(){
 
     }
 
@@ -35,6 +35,6 @@ public class Sound {
 
     // This method is the sound for when the player gets a trivia question right.
     public void CorrectSound(){
-        
+
     }
 }
