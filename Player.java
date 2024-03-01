@@ -1,0 +1,20 @@
+// Amrit Gill
+// March 1, 2024
+// Period 5
+// Hunt the Wumpus
+
+public class Player {
+    ///////////////////////
+    // Properties & Fields
+    //////////////////////
+
+    ///////////////////////
+    // Constructor(s)
+    //////////////////////
+    public Player(){
+
+    }
+    ///////////////////////
+    // Methods
+    //////////////////////
+}
