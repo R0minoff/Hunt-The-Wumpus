@@ -1,3 +1,8 @@
+// Amrit
+// March 1, 2024
+// Period 5
+// Hunt the Wumpus - Wumpus Class
+
 public class Wumpus {
     ///////////////////////
     // Properties & Fields
