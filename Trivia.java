@@ -17,4 +17,9 @@ public class Trivia{
     ///////////////////////
     // Methods
     //////////////////////
+
+    public String getQuestion(){
+        String question = "";
+        return question;
+    }
 }
