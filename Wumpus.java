@@ -1,4 +1,4 @@
-// Amrit
+// Amrit Gill
 // March 1, 2024
 // Period 5
 // Hunt the Wumpus - Wumpus Class
@@ -55,6 +55,6 @@ public class Wumpus {
 
     // This method is when the Wumpus dies.
     public void WumpusLoses(){
-        
+
     }
 }
