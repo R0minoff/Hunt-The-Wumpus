@@ -22,4 +22,11 @@ public class Trivia{
         String question = "";
         return question;
     }
+
+    public boolean askQuestion(){
+        boolean correct = false;
+        return correct;
+    }
+
+     
 }
