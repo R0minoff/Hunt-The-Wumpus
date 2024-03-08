@@ -1,4 +1,4 @@
-package Hunt the Wumpus.Wumpus;
+package HuntTheWumpus.Wumpus;
 
 public class WumpusTest {
     

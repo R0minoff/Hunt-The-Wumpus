@@ -1,4 +1,4 @@
-package Hunt the Wumpus.gameLocations;
+package HuntTheWumpus.gameLocations;
 
 public class gameLocationsTest {
     

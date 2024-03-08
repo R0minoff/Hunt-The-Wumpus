@@ -1,4 +1,4 @@
-package Hunt the Wumpus.Cave;
+package HuntTheWumpus.Cave;
 
 public class CaveTest {
     

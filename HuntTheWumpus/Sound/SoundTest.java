@@ -1,4 +1,4 @@
-package Hunt the Wumpus.Sound;
+package HuntTheWumpus.Sound;
 
 public class SoundTest {
     

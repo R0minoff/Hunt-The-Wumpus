@@ -1,4 +1,4 @@
-package Hunt the Wumpus.Player;
+package HuntTheWumpus.Player;
 
 public class PlayerTest {
     

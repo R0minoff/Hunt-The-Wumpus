@@ -1,4 +1,4 @@
-package Hunt the Wumpus.Trivia;
+package HuntTheWumpus.Trivia;
 
 public class TriviaTest {
     
