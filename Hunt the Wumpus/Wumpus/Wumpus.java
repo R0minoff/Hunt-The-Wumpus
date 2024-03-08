@@ -49,12 +49,12 @@ public class Wumpus {
     }
 
     // This method is when the Wumpus kills the player.
-    public void WumpusWins(){
-
+    public boolean WumpusWins(){
+        return true;
     }
 
     // This method is when the Wumpus dies.
-    public void WumpusLoses(){
-
+    public boolean WumpusLoses(){
+        return true;
     }
 }
