@@ -1,4 +1,4 @@
-package Hunt the Wumpus.gameControl;
+//package Hunt the Wumpus.gameControl;
 
 public class gameControlTest {
     
