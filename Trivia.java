@@ -17,4 +17,16 @@ public class Trivia{
     ///////////////////////
     // Methods
     //////////////////////
+
+    public String getQuestion(){
+        String question = "";
+        return question;
+    }
+
+    public boolean askQuestion(){
+        boolean correct = false;
+        return correct;
+    }
+
+     
 }
