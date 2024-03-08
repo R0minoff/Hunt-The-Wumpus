@@ -15,7 +15,7 @@ public class Player {
     // Constructor(s)
     //////////////////////
     public Player(){
-
+        
     }
     ///////////////////////
     // Methods
