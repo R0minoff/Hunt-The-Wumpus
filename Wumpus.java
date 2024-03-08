@@ -30,7 +30,7 @@ public class Wumpus {
 
     // This method shows the attacks the Wumpus can do
     public void Attacks(){
-
+        
     }
 
     // This method is when the Wumpus attacks the player.
