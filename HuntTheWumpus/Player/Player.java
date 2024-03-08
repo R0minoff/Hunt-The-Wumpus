@@ -9,6 +9,7 @@ public class Player {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    private Wumpus w;
     private String name;
     private boolean triviaAnswer;
     private int gold = 0;
