@@ -15,7 +15,7 @@ public class Player {
     // Constructor(s)
     //////////////////////
     public Player(){
-        
+
     }
     ///////////////////////
     // Methods
@@ -27,6 +27,8 @@ public class Player {
         System.out.println("What is your name?");
         name = s.nextLine();
         System.out.println("Hello " + name + "! Welcome to Hunt the Wumpus!");
+        
+        s.close();
 
         return name;
     }
