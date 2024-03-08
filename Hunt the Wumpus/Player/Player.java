@@ -10,6 +10,9 @@ public class Player {
     // Properties & Fields
     //////////////////////
     private String name;
+    private boolean triviaAnswer;
+    private int gold = 0;
+    private int health = 3;
 
     ///////////////////////
     // Constructor(s)
@@ -40,7 +43,16 @@ public class Player {
 
     // This method gives gold to the player
     public void giveGold(){
-
+        if(triviaAnswer == true){
+            gold = gold + 50;
+        } else if (triviaAnswer == false){
+            if (gold == 0){
+                health = health - 1;
+            }
+            else if (gold >= 50){
+                gold = gold - 50;
+            }
+        }
     }
     
     // This method allows the player to attack the Wumpus
