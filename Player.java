@@ -1,9 +1,9 @@
-// Kjell Tingelstad
-// 2/16/24
+// Amrit Gill
+// March 1, 2024
 // Period 5
-// Hunt the Wumpus - Trivia Class
+// Hunt the Wumpus
 
-public class Trivia{
+public class Player {
     ///////////////////////
     // Properties & Fields
     //////////////////////
@@ -11,15 +11,10 @@ public class Trivia{
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public Trivia(){
-        
+    public Player(){
+
     }
     ///////////////////////
     // Methods
     //////////////////////
-
-    public String getQuestion(){
-        String question = "";
-        return question;
-    }
 }
