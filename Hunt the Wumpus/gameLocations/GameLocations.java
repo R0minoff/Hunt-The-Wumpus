@@ -3,7 +3,7 @@
 // Period 5
 // Hunt the Wumpus
 
-public class GameLocations {
+public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
@@ -11,7 +11,7 @@ public class GameLocations {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public GameLocations(){
+    public gameLocations(){
 
     }
     ///////////////////////
