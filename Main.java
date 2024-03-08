@@ -4,7 +4,18 @@
 // Hunt The Wumpus - Main Class
 
 public class Main{
+    ////////////////////
+    // Properties
+    ///////////////////
+
+    ////////////////////
+    // Main Method
+    ///////////////////
     public static void main(String[] args){
         System.out.println("Hello world");
     }
+
+    ////////////////////
+    // Methods
+    ///////////////////
 }
