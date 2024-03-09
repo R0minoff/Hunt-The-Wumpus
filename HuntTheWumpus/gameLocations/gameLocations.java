@@ -1,7 +1,7 @@
 // Aadhav and Arunim
 // February 16, 2024
 // Period 5
-// Hunt the Wumpus
+// Hunt the Wumpus - Game Locations Class
 
 // Import Files and Directories //
 package HuntTheWumpus.gameLocations;

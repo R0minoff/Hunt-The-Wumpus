@@ -25,7 +25,7 @@ public class UI{
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public static UI(){
+    public UI(){
         /*public class ButtonTest {
             //just testing how this ui stuff works  
             public static void main(String[] args) {  

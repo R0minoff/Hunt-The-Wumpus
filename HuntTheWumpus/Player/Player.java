@@ -1,7 +1,7 @@
 // Amrit Gill
 // March 1, 2024
 // Period 5
-// Hunt the Wumpus
+// Hunt the Wumpus - Player Class
 
 // Import Files and Directories //
 package HuntTheWumpus.Player;
