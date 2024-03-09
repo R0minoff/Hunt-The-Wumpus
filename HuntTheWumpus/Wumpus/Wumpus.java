@@ -2,6 +2,7 @@
 // March 1, 2024
 // Period 5
 // Hunt the Wumpus - Wumpus Class
+package HuntTheWumpus.Wumpus;
 
 public class Wumpus {
     ///////////////////////

@@ -1,7 +1,8 @@
-// Ishaan and Anders are working on this
+// Ishaan and Anders
 // Period 5 CSA
 // 2/12/24
 // Hunt The Wumpus - Cave Class
+package HuntTheWumpus.Cave;
 
 public class Cave {
     ///////////////////////

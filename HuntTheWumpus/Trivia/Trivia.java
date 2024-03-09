@@ -2,6 +2,7 @@
 // 2/16/24
 // Period 5
 // Hunt the Wumpus - Trivia Class
+package HuntTheWumpus.Trivia;
 
 public class Trivia{
     ///////////////////////
