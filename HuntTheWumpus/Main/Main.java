@@ -4,6 +4,7 @@
 // Hunt The Wumpus - Main Class
 
 // Import Files and Directories //
+package HuntTheWumpus.Main;
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
