@@ -3,7 +3,6 @@
 // 2/12/24
 // Hunt The Wumpus - Cave Test Class
 
-// Import Files and Directories //
 package HuntTheWumpus.Cave;
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
@@ -13,7 +12,6 @@ import HuntTheWumpus.Sound.*;
 import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
-//////////////////////////////////
 
 public class CaveTest {
     ///////////////////////

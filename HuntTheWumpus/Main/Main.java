@@ -3,8 +3,6 @@
 // 2/12/24
 // Hunt The Wumpus - Main Class
 
-// Import Files and Directories //
-package HuntTheWumpus.Main;
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
@@ -13,7 +11,6 @@ import HuntTheWumpus.Sound.*;
 import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
-//////////////////////////////////
 
 public class Main{
     ////////////////////

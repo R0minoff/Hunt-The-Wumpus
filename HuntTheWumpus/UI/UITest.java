@@ -3,7 +3,6 @@
 // Period 5
 // Hunt the Wumpus - User Interface Test Class
 
-// Import Files and Directories //
 package HuntTheWumpus.UI;
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
@@ -13,7 +12,6 @@ import HuntTheWumpus.Sound.*;
 import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
-//////////////////////////////////
 
 import javax.swing.*;    
 
