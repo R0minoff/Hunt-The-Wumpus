@@ -18,12 +18,14 @@ public class gameLocations2 {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-
+    private new Player p;
+    private new Wumpus w;
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations2(){
-
+    public gameLocations2(Player player, Wumpus wumpus){
+        p = player;
+        w = wumpus;
     }
     ///////////////////////
     // Methods
