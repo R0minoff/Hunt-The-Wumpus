@@ -19,11 +19,13 @@ public class Player {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    private gameLocations gL;
     private Wumpus w;
     private String name;
     private boolean triviaAnswer;
     private int gold = 0;
     private int health = 3;
+    private String choice;
 
     ///////////////////////
     // Constructor(s)
@@ -48,8 +50,8 @@ public class Player {
     }
 
     // This method makes the player move
-    public void move(){
-
+    public String move(String c){
+        return c;
     }
 
     // This method gives gold to the player
@@ -68,7 +70,7 @@ public class Player {
     
     // This method allows the player to attack the Wumpus
     public void attack(){
-
+        
     }
 
     // This method allows the player to block attacks
@@ -78,6 +80,24 @@ public class Player {
 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
-        
+        Scanner s = new Scanner(System.in);
+        System.out.println("Where would you like to move? Up, Down, Left, or Right?");
+        choice = s.nextLine();
+        if (choice.substring(0,1).equals("R") || choice.substring(0,1).equals("r")){
+            move(choice.substring(0,1));
+        } else if (choice.substring(0,1).equals("L") || choice.substring(0,1).equals("l")){
+            move(choice.substring(0,1));
+        } else if (choice.substring(0,1).equals("U") || choice.substring(0,1).equals("u")){
+            move(choice.substring(0,1));
+        } else if (choice.substring(0,1).equals("D") || choice.substring(0,1).equals("d")){
+            move(choice.substring(0,1));
+        } else {
+            System.out.println("Sorry you did not enter one of the following options. Please try again.");
+            chooseMove();
+        }
+    }
+
+    public String getLocation(){
+        return gL.PlayerPos;
     }
 }

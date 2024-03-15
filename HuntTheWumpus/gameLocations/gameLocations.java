@@ -22,8 +22,8 @@ public class gameLocations {
     private Cave Cave;
     private Wumpus Wump;
     private Player Player;
-    private String WumpusPos;
-    private String PlayerPos;
+    public String WumpusPos;
+    public String PlayerPos;
     
     ///////////////////////
     // Constructor(s)
