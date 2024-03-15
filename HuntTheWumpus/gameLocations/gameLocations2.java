@@ -4,7 +4,7 @@
 // Hunt the Wumpus - Game Locations Class
 // urrrlh
 
-package HuntTheWumpus.gameLocations;
+package HuntTheWumpus.gameLocations2;
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
@@ -14,7 +14,7 @@ import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 
-public class gameLocations {
+public class gameLocations2 {
     ///////////////////////
     // Properties & Fields
     //////////////////////
@@ -22,7 +22,7 @@ public class gameLocations {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations(){
+    public gameLocations2(){
 
     }
     ///////////////////////
