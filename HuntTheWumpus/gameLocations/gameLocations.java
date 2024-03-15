@@ -5,8 +5,6 @@
 // urrrlh
 
 package HuntTheWumpus.gameLocations;
-import java.io.FileNotFoundException;
-
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
@@ -15,6 +13,7 @@ import HuntTheWumpus.Sound.*;
 import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
+import java.io.FileNotFoundException;
 
 public class gameLocations {
     ///////////////////////
