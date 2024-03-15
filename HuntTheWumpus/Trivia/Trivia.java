@@ -16,6 +16,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class Trivia{
     ///////////////////////
@@ -31,7 +32,7 @@ public class Trivia{
     //////////////////////
 
     public Trivia(){
-        this.file = new File("Questions.csv");
+        this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
         getQuestion();
     }
 

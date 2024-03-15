@@ -78,6 +78,6 @@ public class Player {
 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
-
+        
     }
 }
