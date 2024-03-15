@@ -22,6 +22,8 @@ public class gameLocations {
     private Cave Cave;
     private Wumpus Wump;
     private Player Player;
+    private String WumpusPos;
+    private String PlayerPos;
     
     ///////////////////////
     // Constructor(s)
@@ -35,4 +37,26 @@ public class gameLocations {
     ///////////////////////
     // Methods
     //////////////////////
+    public void findHazards(){
+
+    }
+
+    public String getWumpusLocation(Wumpus Wumpus){
+        return WumpusPos;
+    }
+
+    public String getPlayerLocation(Player Player){
+        return PlayerPos;
+    }
+
+    public void giveHint(){
+
+    }
+
+    public void giveWarning(){
+        
+
+    }
+
+
 }
