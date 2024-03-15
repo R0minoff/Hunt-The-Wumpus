@@ -5,6 +5,8 @@
 // urrrlh
 
 package HuntTheWumpus.gameLocations;
+import java.io.FileNotFoundException;
+
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
@@ -18,12 +20,18 @@ public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-
+    private Cave Cave;
+    private Wumpus Wump;
+    private Player Player;
+    
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations(){
-
+    public gameLocations() throws FileNotFoundException{
+        Cave   = new Cave();
+        Wump   = new Wumpus();
+        Player = new Player();
+        
     }
     ///////////////////////
     // Methods
