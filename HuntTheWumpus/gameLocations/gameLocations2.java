@@ -4,7 +4,7 @@
 // Hunt the Wumpus - Game Locations Class
 // urrrlh
 
-package HuntTheWumpus.gameLocations2;
+package HuntTheWumpus.gameLocations;
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
