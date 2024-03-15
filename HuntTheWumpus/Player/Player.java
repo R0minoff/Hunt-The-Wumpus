@@ -14,6 +14,8 @@ import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Player {
     ///////////////////////
@@ -26,6 +28,7 @@ public class Player {
     private int gold = 0;
     private int health = 3;
     private String choice;
+    private ArrayList attackList;
 
     ///////////////////////
     // Constructor(s)
@@ -66,6 +69,15 @@ public class Player {
                 gold = gold - 50;
             }
         }
+    }
+
+    // This method shows the list of attacks that the player can do
+    public void attacks(){
+        attackList.add("Arrow");
+        attackList.add("SUPER SPECIAL");
+        attackList.add("Slamming Spear");
+        attackList.add("Hero Kick");
+        attackList.add("Hero Punch");
     }
     
     // This method allows the player to attack the Wumpus
