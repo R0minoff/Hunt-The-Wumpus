@@ -81,8 +81,9 @@ public class Player {
     }
     
     // This method allows the player to attack the Wumpus
-    public void attack(){
-        
+    public String attack(Random r){
+        String attack = r(attackList);
+        return attack;
     }
 
     // This method allows the player to block attacks
