@@ -88,8 +88,8 @@ public class Player {
     }
 
     // This method allows the player to block attacks
-    public void block(){
-
+    public String block(String b){
+        return b;
     }
 
     // This method allows the player to choose which spot they would like to move to
