@@ -24,27 +24,4 @@ public class SoundTest {
     public SoundTest(){
 
     }
-    ///////////////////////
-    // Methods
-    //////////////////////
-
-    // This method is the sound for when the player dies
-    public void DeathSound(){
-
-    }
-
-    // This method is the sound for when the player beats the Wumpus
-    public void WinSound(){
-
-    }
-
-    // This method is the sound for when the player gets a trvia question wrong.
-    public void WrongSound(){
-
-    }
-
-    // This method is the sound for when the player gets a trivia question right.
-    public void CorrectSound(){
-
-    }
 }
