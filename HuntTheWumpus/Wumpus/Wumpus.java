@@ -21,6 +21,7 @@ public class Wumpus {
     // Properties & Fields
     //////////////////////
     public gameLocations gL;
+    public Player p;
     private int health = 5;
     private ArrayList attackList;
 
@@ -54,27 +55,38 @@ public class Wumpus {
     }
 
     // This method is when the Wumpus attacks the player.
-    public void Attack(){
-
+    public String Attack(){
+        int a = (int)(Math.random() * 10) + 1;
+        String attack = (String) attackList.get(a);
+        return attack;
     }
 
     // This method is when the Wumpus blocks the player's attack.
-    public void Defend(){
-
+    public String Block(String b){
+        return b;
     }
 
     // This method is when the Wumpus takes damage.
-    public void Damage(){
-
+    public int takeDamage(){
+        health--;
+        return health;
     }
 
     // This method is when the Wumpus kills the player.
     public boolean WumpusWins(){
-        return true;
+        if (health != 0 && p.death() == true){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // This method is when the Wumpus dies.
     public boolean WumpusLoses(){
-        return true;
+        if (health == 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 }

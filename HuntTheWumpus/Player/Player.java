@@ -81,7 +81,7 @@ public class Player {
     }
     
     // This method allows the player to attack the Wumpus
-    public String attack(Random r){
+    public String attack(){
         int a = (int)(Math.random() * 5) + 1;
         String attack = (String) attackList.get(a);
         return attack;
@@ -111,7 +111,23 @@ public class Player {
         }
     }
 
+    // This method gets the location of the player
     public String getLocation(){
         return gL.PlayerPos;
+    }
+
+    // This method is for when the player takes damage
+    public int takeDamage(){
+        health--;
+        return health;
+    }
+
+    // This method is for when the player dies
+    public boolean death(){
+        if (health == 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
