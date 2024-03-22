@@ -82,7 +82,8 @@ public class Player {
     
     // This method allows the player to attack the Wumpus
     public String attack(Random r){
-        String attack = r(attackList);
+        int a = (int)(Math.random() * 5) + 1;
+        String attack = (String) attackList.get(a);
         return attack;
     }
 
