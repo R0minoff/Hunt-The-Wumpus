@@ -17,11 +17,12 @@ public class WumpusTest {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    private Wumpus w;
 
     ///////////////////////
     // Constructor
     //////////////////////
     public WumpusTest(){
-
+        
     }
 }

@@ -22,7 +22,7 @@ public class Wumpus {
     //////////////////////
     public gameLocations gL;
     public Player p;
-    private int health = 5;
+    public int health = 5;
     private ArrayList attackList;
 
     ///////////////////////
