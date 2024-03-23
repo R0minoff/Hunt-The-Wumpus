@@ -55,6 +55,8 @@ public class gameLocations {
     private Player Player;
     public  int[][] WumpusPos;
     public  int[][] PlayerPos;
+    public  int[][] HazardPos;
+    private String typeOfHazard;
     
     ///////////////////////
     // Constructor(s)
@@ -69,7 +71,9 @@ public class gameLocations {
     ///////////////////////
     // Methods
     //////////////////////
-    public void findHazards(){
+    public int[][] findHazard(int[][] pPos){
+        typeOfHazard = "";
+        return HazardPos;
 
     }
 
@@ -85,13 +89,17 @@ public class gameLocations {
 
     }
 
-    public void giveWarning(){
-        
-
+    public String giveWarning(String warnType){
+        if(warnType.equals("SuperBats")){
+            return "Bats Nearby.";
+        } else if(warnType.equals("Pit")){
+            return "I feel a draft.";
+        } else{
+            return "I smell a Wumpus!";
+        }
     }
 
     public void shootArrow(){
-
 
     }
 
