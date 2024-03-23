@@ -112,7 +112,7 @@ public class Player {
     }
 
     // This method gets the location of the player
-    public int[][] getLocation(){
+    public int[] getLocation(){
         return gL.PlayerPos;
     }
 

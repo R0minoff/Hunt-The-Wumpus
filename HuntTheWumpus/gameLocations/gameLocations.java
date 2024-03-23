@@ -53,9 +53,9 @@ public class gameLocations {
     private Cave   Cave;
     private Wumpus Wump;
     private Player Player;
-    public  int[][] WumpusPos;
-    public  int[][] PlayerPos;
-    public  int[][] HazardPos;
+    public  int[]  WumpusPos;
+    public  int[]  PlayerPos;
+    public  int[]  HazardPos;
     private String typeOfHazard;
     
     ///////////////////////
@@ -65,23 +65,34 @@ public class gameLocations {
         Cave   = new Cave();
         Wump   = new Wumpus();
         Player = new Player();
+        WumpusPos = new int[2];
+        PlayerPos = new int[2];
+        HazardPos = new int[2];
         
     }
 
     ///////////////////////
     // Methods
     //////////////////////
-    public int[][] findHazard(int[][] pPos){
+    public int[] findHazard(int[][] pPos){
         typeOfHazard = "";
         return HazardPos;
 
     }
 
-    public int[][] getWumpusLocation(Wumpus Wumpus){
+    public int[] getWumpusLocation(Wumpus Wumpus){
+        int wumpusXPos = 0;
+        int wumpusYPos = 0;
+        WumpusPos[0] = wumpusXPos;
+        WumpusPos[1] = wumpusYPos;
         return WumpusPos;
     }
 
-    public int[][] getPlayerLocation(Player Player){
+    public int[] getPlayerLocation(Player Player){
+        int playerXPos = 0;
+        int playerYPos = 0;
+        PlayerPos[0] = playerXPos;
+        PlayerPos[1] = playerYPos;
         return PlayerPos;
     }
 

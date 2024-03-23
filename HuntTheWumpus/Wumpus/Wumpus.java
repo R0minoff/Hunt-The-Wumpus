@@ -36,7 +36,7 @@ public class Wumpus {
     //////////////////////
 
     // This method gets the location of the Wumpus
-    public int[][] getLocation(){
+    public int[] getLocation(){
         return gL.WumpusPos;
     }
 
