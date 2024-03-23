@@ -53,8 +53,8 @@ public class gameLocations {
     private Cave   Cave;
     private Wumpus Wump;
     private Player Player;
-    public  String WumpusPos;
-    public  String PlayerPos;
+    public  int[][] WumpusPos;
+    public  int[][] PlayerPos;
     
     ///////////////////////
     // Constructor(s)
@@ -73,11 +73,11 @@ public class gameLocations {
 
     }
 
-    public String getWumpusLocation(Wumpus Wumpus){
+    public int[][] getWumpusLocation(Wumpus Wumpus){
         return WumpusPos;
     }
 
-    public String getPlayerLocation(Player Player){
+    public int[][] getPlayerLocation(Player Player){
         return PlayerPos;
     }
 
@@ -91,7 +91,7 @@ public class gameLocations {
     }
 
     public void shootArrow(){
-        
+
 
     }
 
