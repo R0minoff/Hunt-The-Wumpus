@@ -50,11 +50,11 @@ public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private Cave Cave;
+    private Cave   Cave;
     private Wumpus Wump;
     private Player Player;
-    public String WumpusPos;
-    public String PlayerPos;
+    public  String WumpusPos;
+    public  String PlayerPos;
     
     ///////////////////////
     // Constructor(s)
@@ -65,6 +65,7 @@ public class gameLocations {
         Player = new Player();
         
     }
+
     ///////////////////////
     // Methods
     //////////////////////
@@ -85,6 +86,11 @@ public class gameLocations {
     }
 
     public void giveWarning(){
+        
+
+    }
+
+    public void shootArrow(){
         
 
     }
