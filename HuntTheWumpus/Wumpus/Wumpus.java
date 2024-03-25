@@ -36,6 +36,7 @@ public class Wumpus {
     //////////////////////
 
     // This method gets the location of the Wumpus
+    //Should the return type be a 2D array to make it easier to get the location in a coordinate form 
     public int[] getLocation(){
         return gL.WumpusPos;
     }
