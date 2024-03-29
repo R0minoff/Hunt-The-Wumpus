@@ -1,3 +1,5 @@
+package HuntTheWumpus.gameControl;
+
 // Mateen and Eyouel 
 // February 12, 2024
 // Period 5

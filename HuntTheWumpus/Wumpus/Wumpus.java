@@ -22,7 +22,7 @@ public class Wumpus {
     //////////////////////
     public gameLocations gL;
     public Player p;
-    private int health = 5;
+    public int health = 5;
     private ArrayList attackList;
 
     ///////////////////////
@@ -36,7 +36,8 @@ public class Wumpus {
     //////////////////////
 
     // This method gets the location of the Wumpus
-    public String getLocation(){
+    //Should the return type be a 2D array to make it easier to get the location in a coordinate form 
+    public int[] getLocation(){
         return gL.WumpusPos;
     }
 
