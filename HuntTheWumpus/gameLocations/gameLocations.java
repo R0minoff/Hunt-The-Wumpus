@@ -76,6 +76,7 @@ public class gameLocations {
     //////////////////////
     public int[] findHazard(int[][] pPos){
         typeOfHazard = "";
+        giveWarning(typeOfHazard);
         return HazardPos;
 
     }
@@ -105,8 +106,10 @@ public class gameLocations {
             return "Bats Nearby.";
         } else if(warnType.equals("Pit")){
             return "I feel a draft.";
-        } else{
+        } else if(warnType.equals("Wumpus")){
             return "I smell a Wumpus!";
+        } else{
+            return "";
         }
     }
 
