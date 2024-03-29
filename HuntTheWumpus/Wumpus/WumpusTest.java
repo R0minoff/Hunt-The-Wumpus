@@ -22,7 +22,7 @@ public class WumpusTest {
     ///////////////////////
     // Constructor
     //////////////////////
-    public WumpusTest(){
+    public static void WumpusTest(){
         
     }
 }
