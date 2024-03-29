@@ -30,7 +30,7 @@ public class Sound {
 
     // This method is the sound for when the player dies
     public void DeathSound(){
-
+        
     }
 
     // This method is the sound for when the player beats the Wumpus

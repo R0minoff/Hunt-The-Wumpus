@@ -12,11 +12,18 @@ import HuntTheWumpus.Sound.*;
 import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 public class Wumpus {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    public gameLocations gL;
+    public Player p;
+    public int health = 5;
+    private ArrayList attackList;
 
     ///////////////////////
     // Constructor(s)
@@ -28,43 +35,59 @@ public class Wumpus {
     // Methods
     //////////////////////
 
-    // This method sets the location of the Wumpus
-    public void setLocation(){
-
-    }
-
     // This method gets the location of the Wumpus
-    public void getLocation(){
-
+    //Should the return type be a 2D array to make it easier to get the location in a coordinate form 
+    public int[] getLocation(){
+        return gL.WumpusPos;
     }
 
     // This method shows the attacks the Wumpus can do
     public void Attacks(){
-        
+        attackList.add("Slimy Sucker Punch");
+        attackList.add("Tornado Kick");
+        attackList.add("Slimeball");
+        attackList.add("Tougue Tap");
+        attackList.add("Flash Fist");
+        attackList.add("SUPER SPECIAL");
+        attackList.add("Casual Kick");
+        attackList.add("Casual Punch");
+        attackList.add("Laser Eyes");
+        attackList.add("Headbutt");
     }
 
     // This method is when the Wumpus attacks the player.
-    public void Attack(){
-
+    public String Attack(){
+        int a = (int)(Math.random() * 10) + 1;
+        String attack = (String) attackList.get(a);
+        return attack;
     }
 
     // This method is when the Wumpus blocks the player's attack.
-    public void Defend(){
-
+    public String Block(String b){
+        return b;
     }
 
     // This method is when the Wumpus takes damage.
-    public void Damage(){
-
+    public int takeDamage(){
+        health--;
+        return health;
     }
 
     // This method is when the Wumpus kills the player.
     public boolean WumpusWins(){
-        return true;
+        if (health != 0 && p.death() == true){
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // This method is when the Wumpus dies.
     public boolean WumpusLoses(){
-        return true;
+        if (health == 0){
+            return true;
+        } else{
+            return false;
+        }
     }
 }
