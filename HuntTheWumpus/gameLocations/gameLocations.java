@@ -61,8 +61,8 @@ public class gameLocations {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations() throws FileNotFoundException{
-        Cave   = new Cave();
+    public gameLocations() {
+        //Cave   = new Cave();
         Wump   = new Wumpus();
         Player = new Player();
         WumpusPos = new int[2];
