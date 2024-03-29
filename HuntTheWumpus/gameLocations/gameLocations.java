@@ -20,11 +20,11 @@ public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private Cave Cave;
-    private Wumpus Wump;
-    private Player Player;
-    public String WumpusPos;
-    public String PlayerPos;
+    private Cave    Cave;
+    private Wumpus  Wump;
+    private Player  Player;
+    private int[][] WumpusPos;
+    private int[][] PlayerPos;
     
     ///////////////////////
     // Constructor(s)
@@ -33,8 +33,8 @@ public class gameLocations {
         Cave   = new Cave();
         Wump   = new Wumpus();
         Player = new Player();
-        
     }
+
     ///////////////////////
     // Methods
     //////////////////////
@@ -42,11 +42,11 @@ public class gameLocations {
 
     }
 
-    public String getWumpusLocation(Wumpus Wumpus){
+    public int[][] getWumpusLocation(Wumpus Wumpus){
         return WumpusPos;
     }
 
-    public String getPlayerLocation(Player Player){
+    public int[][] getPlayerLocation(Player Player){
         return PlayerPos;
     }
 
