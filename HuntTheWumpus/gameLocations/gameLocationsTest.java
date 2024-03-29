@@ -21,8 +21,8 @@ public class gameLocationsTest {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocationsTest(){
-
+    public static void main(String[] args){
+        gameLocations gL = new gameLocations();
     }
     ///////////////////////
     // Methods
