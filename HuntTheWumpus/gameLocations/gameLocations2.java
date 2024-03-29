@@ -44,6 +44,17 @@ import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 
+// Store and interact with the cave used for this game
+// keep track of where the hazards are
+// Keep track of where the Wumpus is. This includes controlling Wumpus behavior(that is, asleep awake, moving).
+// Keep track of where the player is
+// control arrow shooting
+// give any necessary warnings
+// obtain hints to help the player 
+// //////////////////////////////////
+
+
+
 public class gameLocations2 {
     ///////////////////////
     // Properties & Fields
@@ -59,5 +70,35 @@ public class gameLocations2 {
     ///////////////////////
     // Methods
     //////////////////////
-    
+    // Interact, HazardsLocation, WumpusLocation, WumpusBehavior, PlayerLocation,giveHints, warnings
+
+    public Cave interact(Cave c, Player p){
+        return c;
+    }
+
+    public int[][] hazardsLocation(/*hazard h*/){
+        int[][] location = new int[10][10];
+        return location;
+    }
+
+    public int[][] wumpusLocation(Wumpus w){
+        int[][] location = new int[10][10];
+        return location;
+    }
+
+    public String wumpusBehavior(Wumpus w){
+        String str = "";
+        return str;
+    }
+
+    public int[][] playerLocation(Player p){
+        int[][] location = new int[10][10];
+        return location;
+    }
+
+    public void giveHints(Wumpus w, /*Hazard h, */ Player p){
+        System.out.println("yo");
+    }
+
+
 }
