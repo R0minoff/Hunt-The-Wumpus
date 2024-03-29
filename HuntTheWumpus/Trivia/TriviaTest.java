@@ -17,6 +17,9 @@ public class TriviaTest{
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    public static void main(String args[]){
+        Trivia question = new Trivia();
+    }
 
     ///////////////////////
     // Constructor(s)
@@ -28,13 +31,5 @@ public class TriviaTest{
     // Methods
     //////////////////////
 
-    public String getQuestion(){
-        String question = "";
-        return question;
-    }
 
-    public boolean askQuestion(){
-        boolean correct = false;
-        return correct;
-    }
 }
