@@ -22,7 +22,7 @@ public class Wumpus {
     //////////////////////
     public gameLocations gL;
     public Player p;
-    public int health = 5;
+    public int health = 1;
     private ArrayList attackList;
 
     ///////////////////////
@@ -41,30 +41,10 @@ public class Wumpus {
         return gL.WumpusPos;
     }
 
-    // This method shows the attacks the Wumpus can do
-    public void Attacks(){
-        attackList.add("Slimy Sucker Punch");
-        attackList.add("Tornado Kick");
-        attackList.add("Slimeball");
-        attackList.add("Tougue Tap");
-        attackList.add("Flash Fist");
-        attackList.add("SUPER SPECIAL");
-        attackList.add("Casual Kick");
-        attackList.add("Casual Punch");
-        attackList.add("Laser Eyes");
-        attackList.add("Headbutt");
-    }
-
     // This method is when the Wumpus attacks the player.
-    public String Attack(){
-        int a = (int)(Math.random() * 10) + 1;
-        String attack = (String) attackList.get(a);
-        return attack;
-    }
-
-    // This method is when the Wumpus blocks the player's attack.
-    public String Block(String b){
-        return b;
+    public int Attack(){
+        p.health--;
+        return p.health;
     }
 
     // This method is when the Wumpus takes damage.

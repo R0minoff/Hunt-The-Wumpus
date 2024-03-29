@@ -14,7 +14,6 @@ import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 
 import java.util.Scanner;
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Player {
@@ -26,9 +25,9 @@ public class Player {
     private String name;
     private boolean triviaAnswer;
     private int gold = 0;
-    private int health = 3;
+    public int health = 1;
     private String choice;
-    private ArrayList attackList;
+    private int arrows = 3;
 
     ///////////////////////
     // Constructor(s)
@@ -70,26 +69,12 @@ public class Player {
             }
         }
     }
-
-    // This method shows the list of attacks that the player can do
-    public void attacks(){
-        attackList.add("Arrow");
-        attackList.add("SUPER SPECIAL");
-        attackList.add("Slamming Spear");
-        attackList.add("Hero Kick");
-        attackList.add("Hero Punch");
-    }
     
     // This method allows the player to attack the Wumpus
-    public String attack(){
-        int a = (int)(Math.random() * 5) + 1;
-        String attack = (String) attackList.get(a);
-        return attack;
-    }
-
-    // This method allows the player to block attacks
-    public String block(String b){
-        return b;
+    public int attack(){
+        arrows--;
+        w.health--;
+        return arrows;
     }
 
     // This method allows the player to choose which spot they would like to move to
