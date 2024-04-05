@@ -69,12 +69,13 @@ public class gameLocations {
         PlayerPos = new int[2];
         HazardPos = new int[2];
         
+        findHazard(PlayerPos);
     }
 
     ///////////////////////
     // Methods
     //////////////////////
-    public int[] findHazard(int[][] pPos){
+    public int[] findHazard(int[] pPos){
         typeOfHazard = "";
         giveWarning(typeOfHazard);
         return HazardPos;
