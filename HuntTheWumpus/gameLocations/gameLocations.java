@@ -57,6 +57,10 @@ public class gameLocations {
     public  int[]  PlayerPos;
     public  int[]  HazardPos;
     private String typeOfHazard;
+    public int playerXPos = 0;
+    public int playerYPos = 0;
+    public int wumpusXPos = 0;
+    public int wumpusYPos = 0;
     
     ///////////////////////
     // Constructor(s)
@@ -82,16 +86,12 @@ public class gameLocations {
     }
 
     public int[] getWumpusLocation(Wumpus Wumpus){
-        int wumpusXPos = 0;
-        int wumpusYPos = 0;
         WumpusPos[0] = wumpusXPos;
         WumpusPos[1] = wumpusYPos;
         return WumpusPos;
     }
 
     public int[] getPlayerLocation(Player Player){
-        int playerXPos = 0;
-        int playerYPos = 0;
         PlayerPos[0] = playerXPos;
         PlayerPos[1] = playerYPos;
         return PlayerPos;
