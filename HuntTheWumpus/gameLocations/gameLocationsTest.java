@@ -21,7 +21,7 @@ public class gameLocationsTest {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocationsTest(){
+    public static main (String args[]){
 
     }
     ///////////////////////
