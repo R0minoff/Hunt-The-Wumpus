@@ -34,17 +34,17 @@ public class Trivia{
     public String getQuestion(){
         String myQuestion = "";
         try{
-            Scanner s = new Scanner(this.file);
-            String line = "";
-            while(s.hasNextLine()){
-                s.nextLine();
-                line = s.nextLine();
-                String[] info = line.split(",");
-                this.question = info[0];
-                this.difficulty = Integer.parseInt(info[1]);
-                this.answer = info[2];
+            Scanner s = new Scanner(this.file);                    //Creates new scanner
+            String line = "";                                      //Creates empty string variable
+            while(s.hasNextLine()){                                //Creates while loop to iterate over csv file
+                s.nextLine();                                      //Advances scanner to the next line to skip the file header
+                line = s.nextLine();                               //Sets line equal to the current line of the file
+                String[] info = line.split(",");             //Creates a string array that contains the tokens in the line string
+                this.question = info[0];                           //Sets the first token of the line to the question
+                this.difficulty = Integer.parseInt(info[1]);       //Sets difficulty equal to the second token of the line
+                this.answer = info[2];                             //Sets answer equal to the third token
             }
-        } catch(FileNotFoundException e){
+        } catch(FileNotFoundException e){                          //Uses a try catch in case of a fileNotFound exception
             System.out.println("File not Found");
         }
         return myQuestion;
