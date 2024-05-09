@@ -57,40 +57,42 @@ public class gameLocations {
     public  int[]  PlayerPos;
     public  int[]  HazardPos;
     private String typeOfHazard;
+    public int playerXPos = 0;
+    public int playerYPos = 0;
+    public int wumpusXPos = 0;
+    public int wumpusYPos = 0;
     
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations() throws FileNotFoundException{
-        Cave   = new Cave();
+    public gameLocations() {
+        //Cave   = new Cave();
         Wump   = new Wumpus();
         Player = new Player();
         WumpusPos = new int[2];
         PlayerPos = new int[2];
         HazardPos = new int[2];
         
+        findHazard(PlayerPos);
     }
 
     ///////////////////////
     // Methods
     //////////////////////
-    public int[] findHazard(int[][] pPos){
+    public int[] findHazard(int[] pPos){
         typeOfHazard = "";
+        giveWarning(typeOfHazard);
         return HazardPos;
 
     }
 
     public int[] getWumpusLocation(Wumpus Wumpus){
-        int wumpusXPos = 0;
-        int wumpusYPos = 0;
         WumpusPos[0] = wumpusXPos;
         WumpusPos[1] = wumpusYPos;
         return WumpusPos;
     }
 
     public int[] getPlayerLocation(Player Player){
-        int playerXPos = 0;
-        int playerYPos = 0;
         PlayerPos[0] = playerXPos;
         PlayerPos[1] = playerYPos;
         return PlayerPos;
@@ -105,8 +107,10 @@ public class gameLocations {
             return "Bats Nearby.";
         } else if(warnType.equals("Pit")){
             return "I feel a draft.";
-        } else{
+        } else if(warnType.equals("Wumpus")){
             return "I smell a Wumpus!";
+        } else{
+            return "";
         }
     }
 
