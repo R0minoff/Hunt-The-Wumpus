@@ -64,7 +64,7 @@ public class gameLocations2 {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations2(Player p, Wumpus w /*Hazard H*/){
+    public gameLocations2(){
 
     }
     ///////////////////////
