@@ -35,6 +35,8 @@ ABOUT THE OBJECT
  */
 
 package HuntTheWumpus.gameLocations;
+import java.io.FileNotFoundException;
+
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
@@ -64,8 +66,8 @@ public class gameLocations2 {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations2(){
-
+    public gameLocations2() throws FileNotFoundException{
+        Cave map = new Cave();
     }
     ///////////////////////
     // Methods
