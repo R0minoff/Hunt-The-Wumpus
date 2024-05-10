@@ -63,8 +63,6 @@ public class gameLocations {
     //////////////////////
     public gameLocations() {
         //Cave   = new Cave();
-        Wump   = new Wumpus();
-        Player = new Player();
         WumpusPos = new int[2];
         PlayerPos = new int[2];
         HazardPos = new int[2];
