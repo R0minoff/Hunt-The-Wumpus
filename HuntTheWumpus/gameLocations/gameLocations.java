@@ -69,7 +69,7 @@ public class gameLocations {
         PlayerPos = new int[2];
         HazardPos = new int[2];
         
-        findHazard(PlayerPos);
+        //findHazard(PlayerPos);
     }
 
     ///////////////////////
