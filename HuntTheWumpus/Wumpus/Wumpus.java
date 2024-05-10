@@ -29,7 +29,7 @@ public class Wumpus {
     // Constructor(s)
     //////////////////////
     public Wumpus(){
-
+        getLocation();
     }
     ///////////////////////
     // Methods
