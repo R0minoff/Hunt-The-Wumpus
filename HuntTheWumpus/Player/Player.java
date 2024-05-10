@@ -83,20 +83,22 @@ public class Player {
         Scanner s = new Scanner(System.in);
         System.out.println("Where would you like to move? Up, Down, Left, or Right?");
         choice = s.nextLine();
-        if (choice.substring(0,1).equals("R") || choice.substring(0,1).equals("r")){
+        if (choice.substring(0,1).equalsIgnoreCase("R")){
             move(choice.substring(0,1));
             gL.PlayerPos[0]++;
-        } else if (choice.substring(0,1).equals("L") || choice.substring(0,1).equals("l")){
+        } else if (choice.substring(0,1).equalsIgnoreCase("L")){
             move(choice.substring(0,1));
             gL.PlayerPos[0]--;
-        } else if (choice.substring(0,1).equals("U") || choice.substring(0,1).equals("u")){
+        } else if (choice.substring(0,1).equalsIgnoreCase("U")){
             move(choice.substring(0,1));
             gL.PlayerPos[1]++;
-        } else if (choice.substring(0,1).equals("D") || choice.substring(0,1).equals("d")){
+        } else if (choice.substring(0,1).equalsIgnoreCase("D")){
             move(choice.substring(0,1));
             gL.PlayerPos[1]--;
         } else {
+            System.out.println();
             System.out.println("Sorry you did not enter one of the following options. Please try again.");
+            System.out.println();
             chooseMove();
         }
     }
