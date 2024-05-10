@@ -31,8 +31,7 @@ public class Trivia{
     // Methods
     //////////////////////
 
-    public String getQuestion(){
-        String myQuestion = "";
+    public void getQuestion(){
         try{
             Scanner s = new Scanner(this.file);                    //Creates new scanner
             String line = "";                                      //Creates empty string variable
@@ -47,7 +46,6 @@ public class Trivia{
         } catch(FileNotFoundException e){                          //Uses a try catch in case of a fileNotFound exception
             System.out.println("File not Found");
         }
-        return myQuestion;
     }
 
 
