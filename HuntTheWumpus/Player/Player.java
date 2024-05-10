@@ -33,7 +33,10 @@ public class Player {
     // Constructor(s)
     //////////////////////
     public Player(){
+        gL = new gameLocations();
+        w = new Wumpus();
 
+        chooseMove();
     }
     ///////////////////////
     // Methods
