@@ -84,16 +84,16 @@ public class Player {
         choice = s.nextLine();
         if (choice.substring(0,1).equals("R") || choice.substring(0,1).equals("r")){
             move(choice.substring(0,1));
-            gL.playerPos[0]++;
+            gL.PlayerPos[0]++;
         } else if (choice.substring(0,1).equals("L") || choice.substring(0,1).equals("l")){
             move(choice.substring(0,1));
-            gL.playerPos[0]--;
+            gL.PlayerPos[0]--;
         } else if (choice.substring(0,1).equals("U") || choice.substring(0,1).equals("u")){
             move(choice.substring(0,1));
-            gL.playerPos[1]++;
+            gL.PlayerPos[1]++;
         } else if (choice.substring(0,1).equals("D") || choice.substring(0,1).equals("d")){
             move(choice.substring(0,1));
-            gL.playerPos[1]--;
+            gL.PlayerPos[1]--;
         } else {
             System.out.println("Sorry you did not enter one of the following options. Please try again.");
             chooseMove();
