@@ -13,9 +13,7 @@ public class Trivia{
     // Properties & Fields
     //////////////////////
     private File file;
-    private int difficulty;
-    private String question;
-    private String answer;
+    private String[] question;
 
     ///////////////////////
     // Constructor(s)
@@ -24,7 +22,7 @@ public class Trivia{
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
         getQuestion();
-        askQuestion();
+        askQuestion(1);
     }
 
     ///////////////////////
@@ -33,34 +31,36 @@ public class Trivia{
 
     public void getQuestion(){
         try{
-            Scanner s = new Scanner(this.file);                    //Creates new scanner
-            String line = "";                                      //Creates empty string variable
-            while(s.hasNextLine()){                                //Creates while loop to iterate over csv file
-                s.nextLine();                                      //Advances scanner to the next line to skip the file header
-                line = s.nextLine();                               //Sets line equal to the current line of the file
-                String[] info = line.split(",");             //Creates a string array that contains the tokens in the line string
-                this.question = info[0];                           //Sets the first token of the line to the question
-                this.difficulty = Integer.parseInt(info[1]);       //Sets difficulty equal to the second token of the line
-                this.answer = info[2];                             //Sets answer equal to the third token
+            Scanner s = new Scanner(this.file);
+            String line = "";
+            while(s.hasNextLine()){
+                s.nextLine();
+                line = s.nextLine();
+                String[] info = line.split(",");
+                this.question[0] = info[1];
+                this.question[1] = info[2];
+                this.question[2] = info[3];
             }
-        } catch(FileNotFoundException e){                          //Uses a try catch in case of a fileNotFound exception
+        } catch(FileNotFoundException e){
             System.out.println("File not Found");
         }
     }
 
 
-    public boolean askQuestion(){
-        System.out.println(this.question);
-        Scanner s = new Scanner(System.in);
-        String userAns = s.nextLine();
-        if(userAns.equals(this.answer)){
-            System.out.println("Yay you got it right!!");
-            return true;
-        } else {
-            System.out.println("Ooof... better luck next time");
-            return false;
+    public int askQuestion(int numOfQuestions){
+        int numOfCorrect = 0;
+        for(int i = 0; i < numOfQuestions; i++){
+            System.out.println(this.question[0]);
+            Scanner s = new Scanner(System.in);
+            String userAns = s.nextLine();
+            if(userAns.equals(this.question[0])){
+                numOfCorrect++;
+                System.out.println("Yay, you are correct, you have gotten " + numOfCorrect + "/" + numOfQuestions);
+            } else {
+                System.out.println("Better luck next time, you have gotten " + numOfCorrect + "/" + numOfQuestions);
+            }
         }
+        return numOfCorrect;
     }
-
      
 }
