@@ -14,16 +14,20 @@ import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 
 import java.util.Scanner;
+import java.util.Random;
 
 public class Player {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    private gameLocations gL;
     private Wumpus w;
     private String name;
     private boolean triviaAnswer;
     private int gold = 0;
-    private int health = 3;
+    public int health = 1;
+    private String choice;
+    private int arrows = 3;
 
     ///////////////////////
     // Constructor(s)
@@ -48,8 +52,8 @@ public class Player {
     }
 
     // This method makes the player move
-    public void move(){
-
+    public String move(String c){
+        return c;
     }
 
     // This method gives gold to the player
@@ -67,17 +71,52 @@ public class Player {
     }
     
     // This method allows the player to attack the Wumpus
-    public void attack(){
-
-    }
-
-    // This method allows the player to block attacks
-    public void block(){
-
+    public int attack(){
+        arrows--;
+        w.health--;
+        return arrows;
     }
 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
-        
+        Scanner s = new Scanner(System.in);
+        System.out.println("Where would you like to move? Up, Down, Left, or Right?");
+        choice = s.nextLine();
+        if (choice.substring(0,1).equals("R") || choice.substring(0,1).equals("r")){
+            move(choice.substring(0,1));
+            gL.playerXPos++;
+        } else if (choice.substring(0,1).equals("L") || choice.substring(0,1).equals("l")){
+            move(choice.substring(0,1));
+            gL.playerXPos--;
+        } else if (choice.substring(0,1).equals("U") || choice.substring(0,1).equals("u")){
+            move(choice.substring(0,1));
+            gL.playerYPos++;
+        } else if (choice.substring(0,1).equals("D") || choice.substring(0,1).equals("d")){
+            move(choice.substring(0,1));
+            gL.playerYPos--;
+        } else {
+            System.out.println("Sorry you did not enter one of the following options. Please try again.");
+            chooseMove();
+        }
+    }
+
+    // This method gets the location of the player
+    public int[] getLocation(){
+        return gL.PlayerPos;
+    }
+
+    // This method is for when the player takes damage
+    public int takeDamage(){
+        health--;
+        return health;
+    }
+
+    // This method is for when the player dies
+    public boolean death(){
+        if (health == 0){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
