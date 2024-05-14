@@ -27,7 +27,7 @@ public class Sound {
     // Constructor(s)
     //////////////////////
     public Sound(){
-
+        CorrectSound();
     }
     ///////////////////////
     // Methods
@@ -68,6 +68,14 @@ public class Sound {
 
     // This method is the sound for when the player gets a trivia question right.
     public void CorrectSound(){
+        File lol = new File("mixkit-correct-answer-reward-952.wav");
 
+        try{
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(lol));
+            clip.start();
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

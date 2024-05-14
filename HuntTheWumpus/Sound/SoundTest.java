@@ -21,7 +21,7 @@ public class SoundTest {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public SoundTest(){
-
+    public static void main(String[] args){
+        new Sound();
     }
 }
