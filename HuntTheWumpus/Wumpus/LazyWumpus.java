@@ -1,7 +1,7 @@
 // Amrit Gill
 // March 1, 2024
 // Period 5
-// Hunt the Wumpus - Wumpus Class
+// Hunt the Wumpus - Lazy Wumpus Class
 
 package HuntTheWumpus.Wumpus;
 import HuntTheWumpus.Cave.*;
@@ -16,19 +16,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Wumpus {
+public class LazyWumpus {
     ///////////////////////
     // Properties & Fields
     //////////////////////
     public gameLocations gL;
     public Player p;
     public int health = 1;
-    private ArrayList attackList;
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public Wumpus(){
+    public LazyWumpus(){
         getLocation();
     }
     ///////////////////////
@@ -41,18 +40,7 @@ public class Wumpus {
         return gL.WumpusPos;
     }
 
-    // This method is when the Wumpus attacks the player.
-    public int Attack(){
-        p.health--;
-        return p.health;
-    }
-
-    // This method is when the Wumpus takes damage.
-    public int takeDamage(){
-        health--;
-        return health;
-    }
-
+    
     // This method is when the Wumpus kills the player.
     public boolean WumpusWins(){
         if (health != 0 && p.death() == true){
