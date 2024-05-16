@@ -97,7 +97,7 @@ public class gameLocations {
     }
 
     public int shootArrow(int arrowCount){
-        arrowCount -= 1;
+        arrowCount -= 1;        
         return arrowCount;
     }
 
