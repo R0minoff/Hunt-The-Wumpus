@@ -7,13 +7,14 @@ package HuntTheWumpus.Trivia;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.util.ArrayList;
 
 public class Trivia{
     //////////////////////
     // Properties & Fields
     //////////////////////
     private File file;
-    private String[] question;
+    private ArrayList<Question> questions;
 
     /////////////////////
     // Constructor(s)
@@ -21,27 +22,22 @@ public class Trivia{
 
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
-        this.question = new String[4];
-        getQuestion();
-        askQuestion(2);
     }
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public void getQuestion(){
+    public void getQuestion(int avoidedIndex){
         try{
+            int length = 0;
             Scanner s = new Scanner(this.file);
             String line = "";
+            
             while(s.hasNextLine()){
-                s.nextLine();
-                line = s.nextLine();
-                String[] info = line.split(",");
-                this.question[0] = info[1];
-                this.question[1] = info[2];
-                this.question[2] = info[3];
+                
             }
+
         } catch(FileNotFoundException e){
             System.out.println("File not Found");
         }
