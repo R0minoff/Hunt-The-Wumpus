@@ -70,13 +70,6 @@ public class Player {
             }
         }
     }
-    
-    // This method allows the player to attack the Wumpus
-    public int attack(){
-        arrows--;
-        w.health--;
-        return arrows;
-    }
 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
@@ -96,7 +89,8 @@ public class Player {
             move(choice.substring(0,1));
             gL.PlayerPos[1]--;
         } else if(choice.substring(0,1).equalsIgnoreCase("S")){
-            
+            gL.shootArrow(3);
+            arrows--;
         }else {
             System.out.println();
             System.out.println("Sorry you did not enter one of the following options. Please try again.");
