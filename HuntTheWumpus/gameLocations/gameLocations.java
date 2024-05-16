@@ -80,11 +80,11 @@ public class gameLocations {
 
     }
 
-    public int[] getWumpusLocation(Wumpus Wumpus){
+    public int[] getWumpusLocation(){
         return WumpusPos;
     }
 
-    public int[] getPlayerLocation(Player Player){
+    public int[] getPlayerLocation(){
         return PlayerPos;
     }
 
@@ -93,13 +93,20 @@ public class gameLocations {
     }
 
     public String giveWarning(String warnType){
-        if(warnType.equals("SuperBats")){return "Bats Nearby.";} 
-        else if(warnType.equals("Pit")){return "I feel a draft.";} 
-        else if(warnType.equals("Wumpus")){return "I smell a Wumpus!";}
-        return "";
+        if(warnType.equals("SuperBats")) 
+            return "Bats Nearby.";
+        else if(warnType.equals("Pit")) 
+            return "I feel a draft."; 
+        else if(warnType.equals("Wumpus")) 
+            return "I smell a Wumpus!";
+        return warnType;
     }
 
     public void shootArrow(){
+
+    }
+
+    public void initializeCave(){
 
     }
 
