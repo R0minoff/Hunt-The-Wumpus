@@ -45,18 +45,19 @@ import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private Cave   Cave;
-    private Wumpus Wump;
-    private Player Player;
-    private String typeOfHazard;
-    public  int[]  WumpusPos;
-    public  int[]  PlayerPos;
-    public  int[]  HazardPos;
+    private Cave     Cave;
+    private String   typeOfHazard;
+    private String[] Hints;
+    public  int[]    WumpusPos;
+    public  int[]    PlayerPos;
+    public  int[]    HazardPos;
+    
 
     ///////////////////////
     // Constructor(s)
@@ -77,20 +78,13 @@ public class gameLocations {
         typeOfHazard = "";
         giveWarning(typeOfHazard);
         return HazardPos;
-
     }
 
-    public int[] getWumpusLocation(){
-        return WumpusPos;
-    }
+    public int[] getWumpusLocation(){ return WumpusPos; }
 
-    public int[] getPlayerLocation(){
-        return PlayerPos;
-    }
+    public int[] getPlayerLocation(){ return PlayerPos; }
 
-    public void giveHint(){
-
-    }
+    public void giveHint(){ }
 
     public String giveWarning(String warnType){
         if(warnType.equals("SuperBats")) 
@@ -102,13 +96,12 @@ public class gameLocations {
         return warnType;
     }
 
-    public void shootArrow(){
-
+    public int shootArrow(int arrowCount){
+        arrowCount -= 1;
+        return arrowCount;
     }
 
-    public void initializeCave(){
-
-    }
+    public void initializeCave(){ }
 
 
 }
