@@ -27,7 +27,7 @@ public class Sound {
     // Constructor(s)
     //////////////////////
     public Sound(){
-        CorrectSound();
+        
     }
     ///////////////////////
     // Methods
@@ -35,12 +35,12 @@ public class Sound {
 
     // This method is the sound for when the player dies
     public void DeathSound(){
-        File lol = new File("mixkit-correct-answer-reward-952.wav");
+        File death = new File("");
     
 
         try{
             Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(lol));
+            clip.open(AudioSystem.getAudioInputStream(death));
             clip.start();
         } catch (Exception e){
             e.printStackTrace();
@@ -49,12 +49,12 @@ public class Sound {
 
     // This method is the sound for when the player beats the Wumpus
     public void WinSound(){
-        File lol = new File("mixkit-video-game-win-2016.wav");
+        File win = new File("");
     
 
         try{
             Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(lol));
+            clip.open(AudioSystem.getAudioInputStream(win));
             clip.start();
         } catch (Exception e){
             e.printStackTrace();
@@ -63,16 +63,24 @@ public class Sound {
 
     // This method is the sound for when the player gets a trvia question wrong.
     public void WrongSound(){
+        File wrong = new File("");
 
+        try{
+            Clip clip = AudioSystem.getClip();
+            clip.open(AudioSystem.getAudioInputStream(wrong));
+            clip.start();
+        } catch(Exception e){
+            e.printStackTrace();
+        }
     }
 
     // This method is the sound for when the player gets a trivia question right.
     public void CorrectSound(){
-        File lol = new File("mixkit-correct-answer-reward-952.wav");
+        File correct = new File("");
 
         try{
             Clip clip = AudioSystem.getClip();
-            clip.open(AudioSystem.getAudioInputStream(lol));
+            clip.open(AudioSystem.getAudioInputStream(correct));
             clip.start();
         } catch (Exception e){
             e.printStackTrace();
