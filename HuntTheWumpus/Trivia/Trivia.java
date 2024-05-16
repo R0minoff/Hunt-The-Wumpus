@@ -9,20 +9,21 @@ import java.io.FileNotFoundException;
 import java.io.File;
 
 public class Trivia{
-    ///////////////////////
+    //////////////////////
     // Properties & Fields
     //////////////////////
     private File file;
     private String[] question;
 
-    ///////////////////////
+    /////////////////////
     // Constructor(s)
-    //////////////////////
+    /////////////////////
 
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.question = new String[4];
         getQuestion();
-        askQuestion(1);
+        askQuestion(2);
     }
 
     ///////////////////////
@@ -46,14 +47,13 @@ public class Trivia{
         }
     }
 
-
     public int askQuestion(int numOfQuestions){
         int numOfCorrect = 0;
         for(int i = 0; i < numOfQuestions; i++){
             System.out.println(this.question[0]);
             Scanner s = new Scanner(System.in);
             String userAns = s.nextLine();
-            if(userAns.equals(this.question[0])){
+            if(userAns.equals(this.question[2])){
                 numOfCorrect++;
                 System.out.println("Yay, you are correct, you have gotten " + numOfCorrect + "/" + numOfQuestions);
             } else {
