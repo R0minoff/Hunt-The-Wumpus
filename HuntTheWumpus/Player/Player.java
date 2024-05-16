@@ -81,7 +81,7 @@ public class Player {
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
         Scanner s = new Scanner(System.in);
-        System.out.println("Where would you like to move? Up, Down, Left, or Right?");
+        System.out.println("Where would you like to move? Up, Down, Left, or Right? or Would you like to Shoot?");
         choice = s.nextLine();
         if (choice.substring(0,1).equalsIgnoreCase("R")){
             move(choice.substring(0,1));
@@ -95,7 +95,9 @@ public class Player {
         } else if (choice.substring(0,1).equalsIgnoreCase("D")){
             move(choice.substring(0,1));
             gL.PlayerPos[1]--;
-        } else {
+        } else if(choice.substring(0,1).equalsIgnoreCase("S")){
+            
+        }else {
             System.out.println();
             System.out.println("Sorry you did not enter one of the following options. Please try again.");
             System.out.println();
