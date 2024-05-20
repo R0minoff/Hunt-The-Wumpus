@@ -14,7 +14,9 @@ public class Trivia{
     // Properties & Fields
     //////////////////////
     private File file;
-    private ArrayList<Question> questions;
+    private String[][] questions;
+    private static final int C = 4;
+    private static final int R = 4;
 
     /////////////////////
     // Constructor(s)
@@ -22,28 +24,36 @@ public class Trivia{
 
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.questions = new String[C][R];
     }
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public void getQuestion(int avoidedIndex){
-        try{
-            int length = 0;
-            Scanner s = new Scanner(this.file);
-            String line = "";
-            
-            while(s.hasNextLine()){
-                
-            }
-
-        } catch(FileNotFoundException e){
-            System.out.println("File not Found");
-        }
+    public void getQuestions(){
+        /*Read the questions csv */
+        /*put each line of the csv into a new array inside of the questions[][] array */
     }
 
     public int askQuestion(int numOfQuestions){
+        int numOfCorrect = 0;
+        String active = "";
+        Scanner s = new Scanner(System.in);
+        for(int r = 0; r < R; r++){
+            active = questions[r][0];
+            System.out.println(active);
+            String userAns = s.nextLine();
+            if(userAns.equals(questions[r][3])){
+                numOfCorrect++;
+                System.out.println("That is correct");
+            }
+        }
+
+
+
+    return numOfCorrect;
+    /* 
         int numOfCorrect = 0;
         for(int i = 0; i < numOfQuestions; i++){
             System.out.println(this.question[0]);
@@ -57,6 +67,7 @@ public class Trivia{
             }
         }
         return numOfCorrect;
+    */
     }
      
 }
