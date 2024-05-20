@@ -27,7 +27,7 @@ public class Sound {
     // Constructor(s)
     //////////////////////
     public Sound(){
-        
+        WrongSound();
     }
     ///////////////////////
     // Methods
@@ -63,7 +63,7 @@ public class Sound {
 
     // This method is the sound for when the player gets a trvia question wrong.
     public void WrongSound(){
-        File wrong = new File("");
+        File wrong = new File("mixkit-arcade-retro-background-219.wav");
 
         try{
             Clip clip = AudioSystem.getClip();
