@@ -30,13 +30,28 @@ public class LazyWumpus {
     public LazyWumpus(){
         getLocation();
     }
-    
+
     ///////////////////////
     // Methods
     //////////////////////
 
     public int[] getLocation(){
         return gL.WumpusPos;
+    }
+
+    // Precondition: the String state must be "asleep", "awake", or "moving"
+    public String state(String state){
+        return state;
+    }
+
+    public void miss(){
+        if ((p.arrows == 2 && health != 0) | (p.arrows == 1 && health != 0) | (p.arrows == 0 && health != 0)){
+            gL.WumpusPos[0] += 2 | gL.WumpusPos[1] + 2;
+        }
+    }
+
+    public void loseTrivia(){
+        
     }
 
     public boolean WumpusWins(){
