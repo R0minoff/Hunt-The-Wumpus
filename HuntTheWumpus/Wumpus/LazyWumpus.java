@@ -30,18 +30,15 @@ public class LazyWumpus {
     public LazyWumpus(){
         getLocation();
     }
+    
     ///////////////////////
     // Methods
     //////////////////////
 
-    // This method gets the location of the Wumpus
-    //Should the return type be a 2D array to make it easier to get the location in a coordinate form 
     public int[] getLocation(){
         return gL.WumpusPos;
     }
 
-    
-    // This method is when the Wumpus kills the player.
     public boolean WumpusWins(){
         if (health != 0 && p.death() == true){
             return true;
@@ -50,7 +47,6 @@ public class LazyWumpus {
         }
     }
 
-    // This method is when the Wumpus dies.
     public boolean WumpusLoses(){
         if (health == 0){
             return true;
