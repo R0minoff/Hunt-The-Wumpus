@@ -37,4 +37,11 @@ public class ActiveWumpus {
     public int[] getLocation(){
         return gL.WumpusPos;
     }
+
+    
+
+// Precondition: the String state must be "asleep" or "awake"
+    public String state(String state){
+        return state;
+    }
 }
