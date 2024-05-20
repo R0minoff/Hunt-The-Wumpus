@@ -30,18 +30,30 @@ public class LazyWumpus {
     public LazyWumpus(){
         getLocation();
     }
+
     ///////////////////////
     // Methods
     //////////////////////
 
-    // This method gets the location of the Wumpus
-    //Should the return type be a 2D array to make it easier to get the location in a coordinate form 
     public int[] getLocation(){
         return gL.WumpusPos;
     }
 
-    
-    // This method is when the Wumpus kills the player.
+    // Precondition: the String state must be "asleep", "awake", or "moving"
+    public String state(String state){
+        return state;
+    }
+
+    public void miss(){
+        if ((p.arrows == 2 && health != 0) | (p.arrows == 1 && health != 0) | (p.arrows == 0 && health != 0)){
+            gL.WumpusPos[0] += 2 | gL.WumpusPos[1] + 2;
+        }
+    }
+
+    public void loseTrivia(){
+        
+    }
+
     public boolean WumpusWins(){
         if (health != 0 && p.death() == true){
             return true;
@@ -50,7 +62,6 @@ public class LazyWumpus {
         }
     }
 
-    // This method is when the Wumpus dies.
     public boolean WumpusLoses(){
         if (health == 0){
             return true;

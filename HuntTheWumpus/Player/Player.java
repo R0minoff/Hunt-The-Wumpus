@@ -22,12 +22,12 @@ public class Player {
     //////////////////////
     private gameLocations gL;
     private LazyWumpus lw;
-    private String name;
+    public String name;
     private boolean triviaAnswer;
     private int gold = 0;
     public int health = 1;
-    private String choice;
-    private int arrows = 3;
+    public String choice;
+    public int arrows = 3;
 
     ///////////////////////
     // Constructor(s)
