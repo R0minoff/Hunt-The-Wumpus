@@ -21,7 +21,7 @@ public class Player {
     // Properties & Fields
     //////////////////////
     private gameLocations gL;
-    private Wumpus w;
+    private LazyWumpus lw;
     private String name;
     private boolean triviaAnswer;
     private int gold = 0;
@@ -33,7 +33,7 @@ public class Player {
     // Constructor(s)
     //////////////////////
     public Player(){
-
+        gL = new gameLocations();
     }
     ///////////////////////
     // Methods
@@ -69,33 +69,31 @@ public class Player {
             }
         }
     }
-    
-    // This method allows the player to attack the Wumpus
-    public int attack(){
-        arrows--;
-        w.health--;
-        return arrows;
-    }
 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
         Scanner s = new Scanner(System.in);
-        System.out.println("Where would you like to move? Up, Down, Left, or Right?");
+        System.out.println("Where would you like to move? Up, Down, Left, or Right? or Would you like to Shoot?");
         choice = s.nextLine();
-        if (choice.substring(0,1).equals("R") || choice.substring(0,1).equals("r")){
+        if (choice.substring(0,1).equalsIgnoreCase("R")){
             move(choice.substring(0,1));
-            gL.playerXPos++;
-        } else if (choice.substring(0,1).equals("L") || choice.substring(0,1).equals("l")){
+            gL.PlayerPos[0]++;
+        } else if (choice.substring(0,1).equalsIgnoreCase("L")){
             move(choice.substring(0,1));
-            gL.playerXPos--;
-        } else if (choice.substring(0,1).equals("U") || choice.substring(0,1).equals("u")){
+            gL.PlayerPos[0]--;
+        } else if (choice.substring(0,1).equalsIgnoreCase("U")){
             move(choice.substring(0,1));
-            gL.playerYPos++;
-        } else if (choice.substring(0,1).equals("D") || choice.substring(0,1).equals("d")){
+            gL.PlayerPos[1]++;
+        } else if (choice.substring(0,1).equalsIgnoreCase("D")){
             move(choice.substring(0,1));
-            gL.playerYPos--;
-        } else {
+            gL.PlayerPos[1]--;
+        } else if(choice.substring(0,1).equalsIgnoreCase("S")){
+            gL.shootArrow(3);
+            arrows--;
+        }else {
+            System.out.println();
             System.out.println("Sorry you did not enter one of the following options. Please try again.");
+            System.out.println();
             chooseMove();
         }
     }

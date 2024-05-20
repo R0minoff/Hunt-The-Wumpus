@@ -23,6 +23,8 @@ public class gameLocationsTest {
     //////////////////////
     public static void main(String[] args){
         gameLocations gL = new gameLocations();
+        gameLocations2 gL2 = new gameLocations2();
+        System.out.println("hello world");
     }
     ///////////////////////
     // Methods

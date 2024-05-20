@@ -45,35 +45,30 @@ import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private Cave   Cave;
-    private Wumpus Wump;
-    private Player Player;
-    public  int[]  WumpusPos;
-    public  int[]  PlayerPos;
-    public  int[]  HazardPos;
-    private String typeOfHazard;
-    public int playerXPos = 0;
-    public int playerYPos = 0;
-    public int wumpusXPos = 0;
-    public int wumpusYPos = 0;
+    private Cave     Cave;
+    private String   typeOfHazard;
+    private String[] Hints;
+    public  int[]    WumpusPos;
+    public  int[]    PlayerPos;
+    public  int[]    HazardPos;
     
+
     ///////////////////////
     // Constructor(s)
     //////////////////////
     public gameLocations() {
         //Cave   = new Cave();
-        Wump   = new Wumpus();
-        Player = new Player();
         WumpusPos = new int[2];
         PlayerPos = new int[2];
         HazardPos = new int[2];
         
-        findHazard(PlayerPos);
+        //findHazard(PlayerPos);
     }
 
     ///////////////////////
@@ -83,40 +78,30 @@ public class gameLocations {
         typeOfHazard = "";
         giveWarning(typeOfHazard);
         return HazardPos;
-
     }
 
-    public int[] getWumpusLocation(Wumpus Wumpus){
-        WumpusPos[0] = wumpusXPos;
-        WumpusPos[1] = wumpusYPos;
-        return WumpusPos;
-    }
+    public int[] getWumpusLocation(){ return WumpusPos; }
 
-    public int[] getPlayerLocation(Player Player){
-        PlayerPos[0] = playerXPos;
-        PlayerPos[1] = playerYPos;
-        return PlayerPos;
-    }
+    public int[] getPlayerLocation(){ return PlayerPos; }
 
-    public void giveHint(){
-
-    }
+    public void giveHint(){ }
 
     public String giveWarning(String warnType){
-        if(warnType.equals("SuperBats")){
+        if(warnType.equals("SuperBats")) 
             return "Bats Nearby.";
-        } else if(warnType.equals("Pit")){
-            return "I feel a draft.";
-        } else if(warnType.equals("Wumpus")){
+        else if(warnType.equals("Pit")) 
+            return "I feel a draft."; 
+        else if(warnType.equals("Wumpus")) 
             return "I smell a Wumpus!";
-        } else{
-            return "";
-        }
+        return warnType;
     }
 
-    public void shootArrow(){
-
+    public int shootArrow(int arrowCount){
+        arrowCount -= 1;        
+        return arrowCount;
     }
+
+    public void initializeCave(){ }
 
 
 }

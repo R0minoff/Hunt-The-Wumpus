@@ -19,11 +19,12 @@ public class PlayerTest {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public PlayerTest(){
-
+    public static void main(String[] args){
+        new Player();
     }
 }
