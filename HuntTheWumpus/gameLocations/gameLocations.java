@@ -46,17 +46,21 @@ import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    private Scanner  console;
     private Cave     Cave;
     private String   typeOfHazard;
     private String[] Hints;
-    public  int[]    WumpusPos;
-    public  int[]    PlayerPos;
-    public  int[]    HazardPos;
+
+    /** Positions **/
+    public     int[] WumpusPos;
+    public     int[] PlayerPos;
+    public     int[] HazardPos;
     
 
     ///////////////////////
@@ -64,6 +68,7 @@ public class gameLocations {
     //////////////////////
     public gameLocations() {
         //Cave   = new Cave();
+        console   = new Scanner(System.in);
         WumpusPos = new int[2];
         PlayerPos = new int[2];
         HazardPos = new int[2];
@@ -97,8 +102,21 @@ public class gameLocations {
     }
 
     public int shootArrow(int arrowCount){
-        arrowCount -= 1;        
+        boolean isValid = true; 
+        while(!isValid){
+        //TODO: Create findAdjacentRooms() Method for Valid Moves 
+            System.out.print("Where would you like to shoot?");
+            String direction = console.next();
+        }
+        arrowCount -= 1;  
         return arrowCount;
+    }
+
+    private ArrayList<int[]> findAdjacentRooms(){ 
+        //Need Cave To Be Figured Out
+        ArrayList<int[]> AdjacentRooms = new ArrayList<int[]>();
+        
+        return AdjacentRooms;
     }
 
     public void initializeCave(){ }
