@@ -29,12 +29,16 @@ public class Cave  {
     // Constructor(s)
     //////////////////////
     public Cave() throws FileNotFoundException {
-        this.file = new File("Maps.csv");
+        this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\Maps.csv");
         this.reader = new Scanner(this.file);
     }
-    ///////////////////////
+
+
+    /////////////////
     // Methods
-    //////////////////////
+    /////////////////
+
+
    public String[] ReadCaveFile() throws FileNotFoundException {
     //this one will process information from the cave file
     //so far it should be a CSV which has information of the map
@@ -50,6 +54,8 @@ public class Cave  {
     return info;
 
    }
+
+   
    public void WriteCaveFile() throws FileNotFoundException {
     //this one will write the played map back into the file (at the end)
     try{
