@@ -21,7 +21,7 @@ public class Player {
     // Properties & Fields
     //////////////////////
     private gameLocations gL;
-    private Wumpus w;
+    private LazyWumpus lw;
     private String name;
     private boolean triviaAnswer;
     private int gold = 0;
@@ -34,7 +34,6 @@ public class Player {
     //////////////////////
     public Player(){
         gL = new gameLocations();
-        chooseMove();
     }
     ///////////////////////
     // Methods

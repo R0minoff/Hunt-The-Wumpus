@@ -7,62 +7,56 @@ package HuntTheWumpus.Trivia;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
+import java.util.ArrayList;
 
 public class Trivia{
-    ///////////////////////
+    //////////////////////
     // Properties & Fields
     //////////////////////
     private File file;
-    private int difficulty;
-    private String question;
-    private String answer;
+    private ArrayList<Question> questions;
 
-    ///////////////////////
+    /////////////////////
     // Constructor(s)
-    //////////////////////
+    /////////////////////
 
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
-        getQuestion();
-        askQuestion();
     }
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public String getQuestion(){
-        String myQuestion = "";
+    public void getQuestion(int avoidedIndex){
         try{
+            int length = 0;
             Scanner s = new Scanner(this.file);
             String line = "";
+            
             while(s.hasNextLine()){
-                s.nextLine();
-                line = s.nextLine();
-                String[] info = line.split(",");
-                this.question = info[0];
-                this.difficulty = Integer.parseInt(info[1]);
-                this.answer = info[2];
+                
             }
+
         } catch(FileNotFoundException e){
             System.out.println("File not Found");
         }
-        return myQuestion;
     }
 
-
-    public boolean askQuestion(){
-        System.out.println(this.question);
-        Scanner s = new Scanner(System.in);
-        String userAns = s.nextLine();
-        if(userAns.equals(this.answer)){
-            System.out.println("Yay you got it right!!");
-            return true;
-        } else {
-            System.out.println("Ooof... better luck next time");
-            return false;
+    public int askQuestion(int numOfQuestions){
+        int numOfCorrect = 0;
+        for(int i = 0; i < numOfQuestions; i++){
+            System.out.println(this.question[0]);
+            Scanner s = new Scanner(System.in);
+            String userAns = s.nextLine();
+            if(userAns.equals(this.question[2])){
+                numOfCorrect++;
+                System.out.println("Yay, you are correct, you have gotten " + numOfCorrect + "/" + numOfQuestions);
+            } else {
+                System.out.println("Better luck next time, you have gotten " + numOfCorrect + "/" + numOfQuestions);
+            }
         }
+        return numOfCorrect;
     }
-
      
 }
