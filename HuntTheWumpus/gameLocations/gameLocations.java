@@ -102,7 +102,7 @@ public class gameLocations {
     }
 
     public int shootArrow(int arrowCount){
-        boolean isValid = true; 
+        boolean isValid = false; 
         while(!isValid){
         //TODO: Create findAdjacentRooms() Method for Valid Moves 
             System.out.print("Where would you like to shoot?");
