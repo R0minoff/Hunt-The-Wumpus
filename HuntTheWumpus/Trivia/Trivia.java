@@ -32,42 +32,42 @@ public class Trivia{
     //////////////////////
 
     public void getQuestions(){
-        /*Read the questions csv */
-        /*put each line of the csv into a new array inside of the questions[][] array */
+        ArrayList<String[]> lines = new ArrayList<>();
+        try{
+            Scanner s = new Scanner(this.file);
+            while(s.hasNextLine()){
+                String line = s.nextLine();
+                String[] parts = line.split(",");
+                lines.add(parts);
+            }
+        } catch(FileNotFoundException e){
+            System.out.println("File not found");
+        }
+
+        String[][] questionList = new String[lines.size()][];
+        for(int i = 0; i < lines.size(); i++){
+            questions[i] = lines.get(i);
+        }
+        /*Need to shuffle the order of the list*/
+        this.questions = questionList;
     }
 
-    public int askQuestion(int numOfQuestions){
+    public boolean askQuestions(int numOfQuestions, int needCorrect){
         int numOfCorrect = 0;
         String active = "";
         Scanner s = new Scanner(System.in);
-        for(int r = 0; r < R; r++){
-            active = questions[r][0];
+        for(int r = 0; r < numOfQuestions; r++){
+            active = this.questions[r][0];
             System.out.println(active);
             String userAns = s.nextLine();
-            if(userAns.equals(questions[r][3])){
+            if(userAns.equals(this.questions[r][3])){
                 numOfCorrect++;
                 System.out.println("That is correct");
             }
+            /*Need to remove the questions that were asked to prevent them from being asked again */
         }
 
-
-
-    return numOfCorrect;
-    /* 
-        int numOfCorrect = 0;
-        for(int i = 0; i < numOfQuestions; i++){
-            System.out.println(this.question[0]);
-            Scanner s = new Scanner(System.in);
-            String userAns = s.nextLine();
-            if(userAns.equals(this.question[2])){
-                numOfCorrect++;
-                System.out.println("Yay, you are correct, you have gotten " + numOfCorrect + "/" + numOfQuestions);
-            } else {
-                System.out.println("Better luck next time, you have gotten " + numOfCorrect + "/" + numOfQuestions);
-            }
-        }
-        return numOfCorrect;
-    */
+        return numOfCorrect >= needCorrect;
     }
      
 }
