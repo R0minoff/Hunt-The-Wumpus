@@ -24,6 +24,7 @@ public class LazyWumpus {
     public Player p;
     public int health = 1;
     public Trivia t;
+    private int numQ;
 
     ///////////////////////
     // Constructor(s)
@@ -51,11 +52,11 @@ public class LazyWumpus {
         }
     }
 
-    public void loseTrivia(){
-        int numQ = t.questions;
-        int needCorrect = 3;
+    public boolean loseTrivia(){
         if (t.askQuestions(numQ,3)){
-
+            return true;
+        } else {
+            return false;
         }
     }
 
