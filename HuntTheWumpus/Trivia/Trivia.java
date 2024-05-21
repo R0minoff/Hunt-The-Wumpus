@@ -14,7 +14,7 @@ public class Trivia{
     // Properties & Fields
     //////////////////////
     private File file;
-    private String[][] questions;
+    public String[][] questions;
     private static final int C = 4;
     private static final int R = 4;
 
