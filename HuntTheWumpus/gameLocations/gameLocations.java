@@ -76,7 +76,9 @@ public class gameLocations {
     ///////////////////////
     // Methods
     //////////////////////
-    public int[] findHazard(int[] pPos){
+
+    public int[] findHazard(int[] pPos)
+    {
         typeOfHazard = "";
         giveWarning(typeOfHazard);
         return HazardPos;
