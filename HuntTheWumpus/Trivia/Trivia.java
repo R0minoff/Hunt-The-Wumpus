@@ -14,7 +14,9 @@ public class Trivia{
     // Properties & Fields
     //////////////////////
     private File file;
-    private ArrayList<Question> questions;
+    private String[][] questions;
+    private static final int C = 4;
+    private static final int R = 4;
 
     /////////////////////
     // Constructor(s)
@@ -22,41 +24,51 @@ public class Trivia{
 
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.questions = new String[C][R];
+        getQuestions();
     }
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public void getQuestion(int avoidedIndex){
+    public void getQuestions(){
+        ArrayList<String[]> lines = new ArrayList<>();
         try{
-            int length = 0;
             Scanner s = new Scanner(this.file);
-            String line = "";
-            
             while(s.hasNextLine()){
-                
+                String line = s.nextLine();
+                String[] parts = line.split(",");
+                lines.add(parts);
             }
-
         } catch(FileNotFoundException e){
-            System.out.println("File not Found");
+            System.out.println("File not found");
         }
+
+        String[][] questionList = new String[lines.size()][];
+        for(int i = 0; i < lines.size(); i++){
+            questions[i] = lines.get(i);
+        }
+        /*Need to shuffle the order of the list*/
+        this.questions = questionList;
     }
 
-    public int askQuestion(int numOfQuestions){
+    public boolean askQuestions(int numOfQuestions, int needCorrect){
         int numOfCorrect = 0;
-        for(int i = 0; i < numOfQuestions; i++){
-            System.out.println(this.question[0]);
-            Scanner s = new Scanner(System.in);
+        String active = "";
+        Scanner s = new Scanner(System.in);
+        for(int r = 0; r < numOfQuestions; r++){
+            active = this.questions[r][0];
+            System.out.println(active);
             String userAns = s.nextLine();
-            if(userAns.equals(this.question[2])){
+            if(userAns.equals(this.questions[r][3])){
                 numOfCorrect++;
-                System.out.println("Yay, you are correct, you have gotten " + numOfCorrect + "/" + numOfQuestions);
-            } else {
-                System.out.println("Better luck next time, you have gotten " + numOfCorrect + "/" + numOfQuestions);
+                System.out.println("That is correct");
             }
+            /*Need to remove the questions that were asked to prevent them from being asked again */
         }
-        return numOfCorrect;
+
+        return numOfCorrect >= needCorrect;
     }
      
 }
