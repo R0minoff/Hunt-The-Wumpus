@@ -25,6 +25,7 @@ public class Trivia{
     public Trivia(){
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
+        getQuestions();
     }
 
     ///////////////////////
