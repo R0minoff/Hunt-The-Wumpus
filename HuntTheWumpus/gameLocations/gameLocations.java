@@ -67,13 +67,10 @@ public class gameLocations {
     // Constructor(s)
     //////////////////////
     public gameLocations() {
-        //Cave   = new Cave();
         console   = new Scanner(System.in);
         WumpusPos = new int[2];
         PlayerPos = new int[2];
         HazardPos = new int[2];
-        
-        //findHazard(PlayerPos);
     }
 
     ///////////////////////
