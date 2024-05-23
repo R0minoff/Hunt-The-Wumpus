@@ -16,7 +16,7 @@ public class Trivia{
     //////////////////////
     private File file;
     public String[][] questions;
-    private static final int C = 4;
+    private static final int C = 5; //Idk know how but it's backwards
     private static final int R = 4;
 
     /////////////////////
@@ -27,7 +27,7 @@ public class Trivia{
         this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
         getQuestions();
-        System.out.println(askQuestions(4, 3));
+        System.out.println(askQuestions(5, 3));
     }
 
     ///////////////////////
@@ -61,7 +61,7 @@ public class Trivia{
             active = this.questions[r][1];
             System.out.println(active);
             String userAns = s.nextLine();
-            if(userAns.equals(this.questions[r][3])){
+            if(userAns.equalsIgnoreCase(this.questions[r][3])){
                 numOfCorrect++;
                 System.out.println("That is correct!");
             } else {
