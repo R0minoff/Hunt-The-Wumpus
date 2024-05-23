@@ -38,7 +38,7 @@ public class LazyWumpus {
     //////////////////////
 
     public int[] getLocation(){
-        return gL.WumpusPos;
+        return gL.wumpusPos;
     }
 
     // Precondition: the String state must be "asleep", "awake", or "moving"
@@ -48,7 +48,7 @@ public class LazyWumpus {
 
     public void miss(){
         if ((p.arrows == 2 && health != 0) | (p.arrows == 1 && health != 0) | (p.arrows == 0 && health != 0)){
-            gL.WumpusPos[0] += 2 | gL.WumpusPos[1] + 2;
+            gL.wumpusPos[0] += 2 | gL.wumpusPos[1] + 2;
         }
     }
 
