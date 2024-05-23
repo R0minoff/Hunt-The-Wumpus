@@ -48,35 +48,33 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private Scanner  console;
+    private static final Scanner user = new Scanner(System.in);
     //private Cave     Cave;
     private String   typeOfHazard;
     private ArrayList<String> hints;
 
     /** Positions **/
-    public     int[] WumpusPos;
-    public     int[] PlayerPos;
-    public     int[] HazardPos;
+    public     int[] wumpusPos;
+    public     int[] playerPos;
+    public     int[] hazardPos;
     
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
     public gameLocations() throws FileNotFoundException{
-        console   = new Scanner(System.in);
         hints     = new ArrayList<String>();
-        WumpusPos = new int[2];
-        PlayerPos = new int[2];
-        HazardPos = new int[2];
+        wumpusPos = new int[2];
+        playerPos = new int[2];
+        hazardPos = new int[2];
         initializeHints();
-        initializeCave();
+        //initializeCave();
     }
 
     ///////////////////////
@@ -87,17 +85,17 @@ public class gameLocations {
     {
         typeOfHazard = "";
         giveWarning(typeOfHazard);
-        return HazardPos;
+        return hazardPos;
     }
 
-    public int[] getWumpusLocation(){ return WumpusPos; }
+    public int[] getWumpusLocation(){ return wumpusPos; }
 
-    public int[] getPlayerLocation(){ return PlayerPos; }
+    public int[] getPlayerLocation(){ return playerPos; }
 
     public void initializeHints() throws FileNotFoundException{
         try{
-            File Questions = new File("../Trivia/Questions.csv");
-            Scanner readFile = new Scanner(Questions);
+            File data = new File("Questions.csv");
+            Scanner readFile = new Scanner(data);
             while(readFile.hasNextLine()){
                 String currentLine = readFile.nextLine();
                 String[] splitLine = currentLine.split(",");
@@ -129,17 +127,17 @@ public class gameLocations {
         while(!isValid){
         //TODO: Create findAdjacentRooms() Method for Valid Moves 
             System.out.print("Where would you like to shoot?");
-            String direction = console.next();
+            String direction = user.next();
         }
-        arrowCount -= 1;  
+        arrowCount--;  
         return arrowCount;
     }
 
     private ArrayList<int[]> findAdjacentRooms(){ 
         //Need Cave To Be Figured Out
-        ArrayList<int[]> AdjacentRooms = new ArrayList<int[]>();
+        ArrayList<int[]> adjacentRooms = new ArrayList<int[]>();
         
-        return AdjacentRooms;
+        return adjacentRooms;
     }
 
     public void initializeCave(){ }

@@ -25,7 +25,7 @@ public class gameLocationsTest {
     //////////////////////
     public static void main(String[] args) throws FileNotFoundException{
         gameLocations gL = new gameLocations();
-        gameLocations2 gL2 = new gameLocations2();
+        //gameLocations2 gL2 = new gameLocations2();
         System.out.println(gL.giveHint());
         //System.out.println("hello world");
     }
