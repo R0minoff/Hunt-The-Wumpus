@@ -49,8 +49,9 @@ public class Trivia{
         for(int i = 0; i < lines.size(); i++){
             questions[i] = lines.get(i);
         }
-        /*Need to shuffle the order of the list*/
+        /*TODO: Need to shuffle the order of the list*/
         this.questions = questionList;
+        System.out.println("Trivia is Working!");
     }
 
     public boolean askQuestions(int numOfQuestions, int needCorrect){
@@ -65,7 +66,7 @@ public class Trivia{
                 numOfCorrect++;
                 System.out.println("That is correct");
             }
-            /*Need to remove the questions that were asked to prevent them from being asked again */
+            /*TODO: Need to remove the questions that were asked to prevent them from being asked again */
         }
 
         return numOfCorrect >= needCorrect;
