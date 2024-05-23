@@ -11,7 +11,6 @@ public class TriviaTest{
     // Test Method
     //////////////////////
     public static void main(String args[]){
-        Trivia trivia = new Trivia();
-        trivia.getQuestions();
+        new Trivia();
     }
 }
