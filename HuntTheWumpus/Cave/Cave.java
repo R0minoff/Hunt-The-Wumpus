@@ -29,8 +29,8 @@ public class Cave  {
     // Constructor(s)
     //////////////////////
     public Cave() throws FileNotFoundException {
-        this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\Maps.csv");
-        this.reader = new Scanner(this.file);
+        //this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\Maps.csv");
+        //this.reader = new Scanner(this.file);
     }
 
 

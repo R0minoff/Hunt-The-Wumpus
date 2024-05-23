@@ -47,15 +47,18 @@ import HuntTheWumpus.Wumpus.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
     private Scanner  console;
-    private Cave     Cave;
+    //private Cave     Cave;
     private String   typeOfHazard;
-    private String[] Hints;
+    private ArrayList<String> hints;
 
     /** Positions **/
     public     int[] WumpusPos;
@@ -66,11 +69,14 @@ public class gameLocations {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations() {
+    public gameLocations() throws FileNotFoundException{
         console   = new Scanner(System.in);
+        hints     = new ArrayList<String>();
         WumpusPos = new int[2];
         PlayerPos = new int[2];
         HazardPos = new int[2];
+        initializeHints();
+        initializeCave();
     }
 
     ///////////////////////
@@ -88,7 +94,25 @@ public class gameLocations {
 
     public int[] getPlayerLocation(){ return PlayerPos; }
 
-    public void giveHint(){ }
+    public void initializeHints() throws FileNotFoundException{
+        try{
+            File Questions = new File("../Trivia/Questions.csv");
+            Scanner readFile = new Scanner(Questions);
+            while(readFile.hasNextLine()){
+                String currentLine = readFile.nextLine();
+                String[] splitLine = currentLine.split(",");
+                hints.add(splitLine[3]);
+            }
+        } catch(IOException e){
+            System.out.println("Error in writing file.");
+            e.printStackTrace();
+        }
+    }
+
+    public String giveHint() throws FileNotFoundException{ 
+        int randNum = (int) (Math.random() * (hints.size()));
+        return hints.remove(randNum);
+    }
 
     public String giveWarning(String warnType){
         if(warnType.equals("SuperBats")) 
