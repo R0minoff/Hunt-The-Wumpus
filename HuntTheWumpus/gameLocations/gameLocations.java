@@ -55,7 +55,6 @@ public class gameLocations {
     // Properties & Fields
     //////////////////////
     private static final Scanner user = new Scanner(System.in);
-    //private Cave     Cave;
     private String   typeOfHazard;
     private ArrayList<String> hints;
 
