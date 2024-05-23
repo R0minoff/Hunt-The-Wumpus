@@ -35,7 +35,7 @@ public class ActiveWumpus {
     // METHODS
     /////////////////
     public int[] getLocation(){
-        return gL.WumpusPos;
+        return gL.wumpusPos;
     }
 
     
