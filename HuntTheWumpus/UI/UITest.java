@@ -96,6 +96,7 @@ public void draw(){
     you.enable(false);
     you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
     add(you);
+    //ActionEvent.Click(System.out.println("WE in DA SKY"));
     }
    
     for(int x = 0; x <8; x++){
@@ -106,7 +107,6 @@ public void draw(){
       add(you);
       }
       
-
     setVisible(true);
   }
     
