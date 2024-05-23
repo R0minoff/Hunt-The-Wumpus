@@ -4,7 +4,9 @@
 // Hunt the Wumpus - Game Locations Test Class
 
 package HuntTheWumpus.gameLocations;
-import HuntTheWumpus.Cave.*;
+import java.io.FileNotFoundException;
+
+//import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
 import HuntTheWumpus.Player.*;
@@ -21,10 +23,11 @@ public class gameLocationsTest {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException{
         gameLocations gL = new gameLocations();
-        gameLocations2 gL2 = new gameLocations2();
-        System.out.println("hello world");
+        //gameLocations2 gL2 = new gameLocations2();
+        System.out.println(gL.giveHint());
+        //System.out.println("hello world");
     }
     ///////////////////////
     // Methods
