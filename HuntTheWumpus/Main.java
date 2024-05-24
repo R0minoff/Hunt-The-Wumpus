@@ -3,7 +3,6 @@
 // 2/12/24
 // Hunt The Wumpus - Main Class
 
-package HuntTheWumpus;
 import Cave.*;
 import gameControl.*;
 import gameLocations.*;
@@ -13,7 +12,7 @@ import Trivia.*;
 import UI.*;
 import Wumpus.*;
 
-/* 
+
 public class Main{
     ////////////////////
     // Properties
@@ -30,4 +29,3 @@ public class Main{
     // Methods
     ///////////////////
 }
-*/
