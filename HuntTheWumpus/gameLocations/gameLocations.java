@@ -58,6 +58,7 @@ public class gameLocations {
     private String   typeOfHazard;
     private ArrayList<String> hints;
 
+
     /** Positions **/
     public     int[] wumpusPos;
     public     int[] playerPos;
@@ -133,14 +134,6 @@ public class gameLocations {
         return arrowCount;
     }
 
-    private ArrayList<int[]> findAdjacentRooms(){ 
-        //Need Cave To Be Figured Out
-        ArrayList<int[]> adjacentRooms = new ArrayList<int[]>();
-        
-        return adjacentRooms;
-    }
-
-    public void initializeCave(){ }
-
+    public void initializeCave(Cave cave){ }
 
 }
