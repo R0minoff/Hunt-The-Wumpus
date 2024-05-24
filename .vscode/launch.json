@@ -8,6 +8,13 @@
             "type": "java",
             "name": "TriviaTest",
             "request": "launch",
+            "mainClass": "Trivia.TriviaTest",
+            "projectName": "Hunt-The-Wumpus_13b14fea"
+        },
+        {
+            "type": "java",
+            "name": "TriviaTest",
+            "request": "launch",
             "mainClass": "HuntTheWumpus.Trivia.TriviaTest",
             "projectName": "Hunt-The-Wumpus_13b14fea"
         },

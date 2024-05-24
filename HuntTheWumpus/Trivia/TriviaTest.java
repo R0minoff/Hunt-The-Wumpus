@@ -3,7 +3,7 @@
 // Period 5
 // Hunt the Wumpus - Trivia Test Class
 
-package HuntTheWumpus.Trivia;
+package Trivia;
 
 
 public class TriviaTest{

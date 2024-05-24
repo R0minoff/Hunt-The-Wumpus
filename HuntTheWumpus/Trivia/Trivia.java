@@ -3,7 +3,7 @@
 // Period 5
 // Hunt the Wumpus - Trivia Class
 
-package HuntTheWumpus.Trivia;
+package Trivia;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
