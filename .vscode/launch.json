@@ -6,10 +6,17 @@
     "configurations": [
         {
             "type": "java",
-            "name": "gameLocationsTest",
+            "name": "TriviaTest",
             "request": "launch",
-            "mainClass": "HuntTheWumpus.gameLocations.gameLocationsTest",
-            "projectName": "Hunt-The-Wumpus_fa5e6b8c"
+            "mainClass": "HuntTheWumpus.Trivia.TriviaTest",
+            "projectName": "Hunt-The-Wumpus_13b14fea"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Hunt-The-Wumpus_13b14fea"
         },
         {
             "type": "java",

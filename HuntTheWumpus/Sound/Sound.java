@@ -9,15 +9,6 @@ import java.io.File;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
-
 public class Sound {
     ///////////////////////
     // Properties & Fields
