@@ -35,15 +35,8 @@
  *      - Shoot arrows into any adjacent room connected by a tunnel
  */
 
-package HuntTheWumpus.gameLocations;
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
+package gameLocations;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
