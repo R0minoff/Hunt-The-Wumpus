@@ -29,18 +29,22 @@ public class Cave  {
     // Constructor(s)
     //////////////////////
     public Cave() throws FileNotFoundException {
-    this.maps = new File("C:\\git\\Hunt-The-Wumpus-V2\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\Maps.csv");
+    //this.maps = new File("C:\\git\\Hunt-The-Wumpus-V2\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\Maps.csv");
     this.rooms = new ArrayList<Cell>();
-    this.reader = new Scanner(this.maps);
+    //this.reader = new Scanner(this.maps);
     //set each cell to its information based on a map (we need 5 made maps)
     String[] cellsInfo = getFirstLineCSV();
     for(int i = 0; i < cellsInfo.length; i++){
       rooms.add(new Cell(cellsInfo[i]));
       System.out.println(getCell(i));
     }
-    ///////////////////////
+
+
+    /////////////////
     // Methods
-    //////////////////////
+    /////////////////
+
+
     // this returns String[] of infos for each cell (1-30)
   public String[] getFirstLineCSV(){
     //skips header
@@ -62,49 +66,18 @@ public class Cave  {
     }
     System.out.println(Arrays.toString(info));
     return info;
-  }
-      
-// NEIGHBOR CELL METHODS
 
-    // ****ONLY WORKS FOR INTS ***
+   }
+   public void WriteCaveFile() throws FileNotFoundException {
+    //this one will write the played map back into the file (at the end)
+    try{
+      FileWriter FW = new FileWriter(file, true);
+      FW.write(ConvertInfo(ReadCaveFile()));
+      FW.close();
+    } catch (Exception e) {
 
-    // given a cell number will give you the neighbor according to its direction
-    /*
-     * UL U UR
-     * cell
-     * DL D DR
-     */
-    
-    public int getUp(int num) {
-        int up = num - 6;
-        return wrap(up);
-    }
+      System.out.println("i suck " + e);
 
-    public int getUpRight(int num) {
-        int colNum = getCol(num);
-        int UR = num;
-        if (colNum % 2 == 0 && colNum != 0) {
-            return wrap(UR + 1);
-        } else if (colNum == 0) {
-            return wrap(UR - 5);
-        } else {
-            return wrap(UR - 5);
-        }
-    }
-
-    public int getDownRight(int num) {
-        int colNum = getCol(num);
-        int DR = wrap(num + 1);
-        if (colNum % 2 == 0 && colNum != 0) {
-            return wrap(DR + 6); // + 7
-        } else {
-            return DR; // + 1
-        }
-    }
-
-    public int getDown(int num) {
-        int down = num + 6;
-        return wrap(down);
     }
 
     public int getDownLeft(int num) {
