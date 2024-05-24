@@ -12,6 +12,7 @@ import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
 
+/* 
 public class Main{
     ////////////////////
     // Properties
@@ -28,3 +29,4 @@ public class Main{
     // Methods
     ///////////////////
 }
+*/
