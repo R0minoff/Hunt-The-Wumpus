@@ -13,6 +13,7 @@ import Trivia.*;
 import UI.*;
 import Wumpus.*;
 
+/* 
 public class Main{
     ////////////////////
     // Properties
@@ -29,3 +30,4 @@ public class Main{
     // Methods
     ///////////////////
 }
+*/
