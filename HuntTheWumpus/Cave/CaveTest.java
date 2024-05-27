@@ -19,14 +19,11 @@ public class CaveTest {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public CaveTest() throws FileNotFoundException {
- 
+    public static void main(String args[]) throws FileNotFoundException{
+        Cave myCave = new Cave();
     }
     ///////////////////////
     // Methods
     //////////////////////
-    public static void main(String[] args) throws FileNotFoundException{
-        new Cave();
-    }
 
 }
