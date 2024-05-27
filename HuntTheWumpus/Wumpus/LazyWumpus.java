@@ -3,15 +3,8 @@
 // Period 5
 // Hunt the Wumpus - Lazy Wumpus Class
 
-package HuntTheWumpus.Wumpus;
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
+package Wumpus;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -23,6 +16,8 @@ public class LazyWumpus {
     public gameLocations gL;
     public Player p;
     public int health = 1;
+    public Trivia t;
+    private int numQ;
 
     ///////////////////////
     // Constructor(s)
@@ -30,18 +25,34 @@ public class LazyWumpus {
     public LazyWumpus(){
         getLocation();
     }
+
     ///////////////////////
     // Methods
     //////////////////////
 
-    // This method gets the location of the Wumpus
-    //Should the return type be a 2D array to make it easier to get the location in a coordinate form 
     public int[] getLocation(){
-        return gL.WumpusPos;
+        return gL.wumpusPos;
     }
 
-    
-    // This method is when the Wumpus kills the player.
+    // Precondition: the String state must be "asleep", "awake", or "moving"
+    public String state(String state){
+        return state;
+    }
+
+    public void miss(){
+        if ((p.arrows == 2 && health != 0) | (p.arrows == 1 && health != 0) | (p.arrows == 0 && health != 0)){
+            gL.wumpusPos[0] += 2 | gL.wumpusPos[1] + 2;
+        }
+    }
+
+    public boolean loseTrivia(){
+        if (t.askQuestions(numQ,3)){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     public boolean WumpusWins(){
         if (health != 0 && p.death() == true){
             return true;
@@ -50,7 +61,6 @@ public class LazyWumpus {
         }
     }
 
-    // This method is when the Wumpus dies.
     public boolean WumpusLoses(){
         if (health == 0){
             return true;

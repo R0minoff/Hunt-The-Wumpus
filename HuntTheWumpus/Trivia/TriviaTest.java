@@ -3,7 +3,7 @@
 // Period 5
 // Hunt the Wumpus - Trivia Test Class
 
-package HuntTheWumpus.Trivia;
+package Trivia;
 
 
 public class TriviaTest{
@@ -11,6 +11,6 @@ public class TriviaTest{
     // Test Method
     //////////////////////
     public static void main(String args[]){
-        Trivia question = new Trivia();
+        new Trivia();
     }
 }

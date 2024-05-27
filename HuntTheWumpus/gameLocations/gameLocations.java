@@ -35,56 +35,76 @@
  *      - Shoot arrows into any adjacent room connected by a tunnel
  */
 
-package HuntTheWumpus.gameLocations;
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
+package gameLocations;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private Cave     Cave;
+    private static final Scanner console = new Scanner(System.in);
     private String   typeOfHazard;
-    private String[] Hints;
-    public  int[]    WumpusPos;
-    public  int[]    PlayerPos;
-    public  int[]    HazardPos;
+    private ArrayList<String> hints;
+
+
+    /** Positions **/
+    public     int[] wumpusPos;
+    public     int[] playerPos;
+    public     int[] hazardPos;
     
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public gameLocations() {
-        //Cave   = new Cave();
-        WumpusPos = new int[2];
-        PlayerPos = new int[2];
-        HazardPos = new int[2];
-        
-        //findHazard(PlayerPos);
+    public gameLocations() throws FileNotFoundException{
+        hints     = new ArrayList<String>();
+        wumpusPos = new int[2];
+        playerPos = new int[2];
+        hazardPos = new int[2];
+        initializeHints();
+        //initializeCave();
     }
 
     ///////////////////////
     // Methods
     //////////////////////
-    public int[] findHazard(int[] pPos){
+
+    public int[] findHazard(int[] pPos)
+    {
         typeOfHazard = "";
         giveWarning(typeOfHazard);
-        return HazardPos;
+        return hazardPos;
     }
 
-    public int[] getWumpusLocation(){ return WumpusPos; }
+    public int[] getWumpusLocation(){ return wumpusPos; }
 
-    public int[] getPlayerLocation(){ return PlayerPos; }
+    public int[] getPlayerLocation(){ return playerPos; }
 
-    public void giveHint(){ }
+    public void initializeHints() throws FileNotFoundException{
+        try{
+            File data = new File("HuntTheWumpus/Trivia/Questions.csv");
+            Scanner readFile = new Scanner(data);
+            while(readFile.hasNextLine()){
+                String currentLine = readFile.nextLine();
+                String[] splitLine = currentLine.split(",");
+                hints.add(splitLine[3]);
+            }
+            readFile.close();
+        } catch(IOException e){
+            System.out.println("Error in writing file.");
+            e.printStackTrace();
+        }
+    }
+
+    public String giveHint() throws FileNotFoundException{ 
+        int randNum = (int) (Math.random() * (hints.size()));
+        return hints.remove(randNum);
+    }
 
     public String giveWarning(String warnType){
         if(warnType.equals("SuperBats")) 
@@ -97,11 +117,16 @@ public class gameLocations {
     }
 
     public int shootArrow(int arrowCount){
-        arrowCount -= 1;        
+        boolean isValid = false; 
+        while(!isValid){
+        //TODO: Create findAdjacentRooms() Method for Valid Moves 
+            System.out.print("Where would you like to shoot?");
+            String direction = console.next();
+        }
+        arrowCount--;  
         return arrowCount;
     }
 
-    public void initializeCave(){ }
-
+    public void initializeCave(Cave cave){ }
 
 }

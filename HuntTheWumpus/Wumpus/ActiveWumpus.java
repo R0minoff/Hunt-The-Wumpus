@@ -3,15 +3,8 @@
 // Period 5
 // Hunt the Wumpus - Active Wumpus Class
 
-package HuntTheWumpus.Wumpus;
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
+package Wumpus;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -35,6 +28,13 @@ public class ActiveWumpus {
     // METHODS
     /////////////////
     public int[] getLocation(){
-        return gL.WumpusPos;
+        return gL.wumpusPos;
+    }
+
+    
+
+// Precondition: the String state must be "asleep" or "awake"
+    public String state(String state){
+        return state;
     }
 }
