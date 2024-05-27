@@ -1,4 +1,4 @@
-package HuntTheWumpus.Cave;
+package Cave;
 
 import java.util.Arrays;
 
