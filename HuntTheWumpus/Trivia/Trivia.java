@@ -8,7 +8,9 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.io.FileWriter;
 
 public class Trivia{
     //////////////////////
@@ -16,7 +18,7 @@ public class Trivia{
     //////////////////////
     private File file;
     public String[][] questions;
-    private static final int C = 5; //Idk know how but it's backwards
+    private static final int C = 7; //Idk know how but it's backwards
     private static final int R = 4;
 
     /////////////////////
@@ -24,10 +26,10 @@ public class Trivia{
     /////////////////////
 
     public Trivia(){
-        this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.file = new File("C:\\Hunt-The-Wumpus-1\\HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
         getQuestions(this.file);
-        System.out.println(askQuestions(5, 3));
+        askQuestions(5, 3);
     }
 
     ///////////////////////
@@ -56,9 +58,11 @@ public class Trivia{
     public boolean askQuestions(int numOfQuestions, int needCorrect){
         int numOfCorrect = 0;
         String active = "";
+        ArrayList<String> indexes = new ArrayList<String>();
         Scanner s = new Scanner(System.in);
         for(int r = 0; r < numOfQuestions; r++){
             active = this.questions[r][1];
+            indexes.add(this.questions[r][0]);
             System.out.println(active);
             String userAns = s.nextLine();
             if(userAns.equalsIgnoreCase(this.questions[r][3])){
@@ -69,9 +73,33 @@ public class Trivia{
             }
         }
         s.close();
+        System.out.println(this.questions.length);
+        //shouldnt be 7 eventually, just for testing
+        //as of right now temp questions has nulls, need to fix that
+        String[][] tempQuestions = new String[7][4];
+        for(int i = 0; i < this.questions.length; i++){
+            if(indexes.contains(this.questions[i][0])){
+                continue;
+            } else {
+                tempQuestions[i] = this.questions[i];
+            }
+        }
+        this.questions = tempQuestions;
+        System.out.println(Arrays.deepToString(this.questions));
+        /*
+         try{
+            File tempFile = new File("C:\\\\Git-P5 smiley face\\\\Hunt-The-Wumpus\\\\HuntTheWumpus\\\\Trivia\\\\Questions.csv (copy).csv");
+            FileWriter writer = new FileWriter(tempFile);
+            
+        } catch(Exception e){
+            System.out.println("File not found");
+        }
+        
+         */
+        
 
-        //Figure out how to remove the questions that were asked from the CSV file
-        //--Make an arraylist of indexes of the questions that were asked
+        //REMOVE QUESTIONS FROM CSV
+        //--DONE
         //--Make a new file
         //--Add all of the lines of the old file to the new file except for the asked questions
         //--Would need to rerun the getQuestions method with the new file in order to update the 2D array
