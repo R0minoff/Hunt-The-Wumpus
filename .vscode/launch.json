@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TriviaTest",
+            "request": "launch",
+            "mainClass": "Trivia.TriviaTest",
+            "projectName": "Hunt-The-Wumpus-1_a7528781"
+        },
+        {
+            "type": "java",
+            "name": "CaveTest",
+            "request": "launch",
+            "mainClass": "HuntTheWumpus.Cave.CaveTest",
+            "projectName": "Hunt-The-Wumpus_fe75976f"
+        },
+        {
+            "type": "java",
+            "name": "TriviaTest",
+            "request": "launch",
+            "mainClass": "Trivia.TriviaTest",
+            "projectName": "Hunt-The-Wumpus_13b14fea"
+        },
+        {
+            "type": "java",
+            "name": "TriviaTest",
+            "request": "launch",
+            "mainClass": "HuntTheWumpus.Trivia.TriviaTest",
+            "projectName": "Hunt-The-Wumpus_13b14fea"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Hunt-The-Wumpus_13b14fea"
+        },
+        {
+            "type": "java",
             "name": "UITest",
             "request": "launch",
             "mainClass": "UI.UITest",

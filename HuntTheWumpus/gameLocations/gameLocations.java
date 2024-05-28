@@ -35,15 +35,8 @@
  *      - Shoot arrows into any adjacent room connected by a tunnel
  */
 
-package HuntTheWumpus.gameLocations;
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
+package gameLocations;
+
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -54,10 +47,10 @@ public class gameLocations {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private static final Scanner user = new Scanner(System.in);
-    //private Cave     Cave;
+    private static final Scanner console = new Scanner(System.in);
     private String   typeOfHazard;
     private ArrayList<String> hints;
+
 
     /** Positions **/
     public     int[] wumpusPos;
@@ -94,13 +87,14 @@ public class gameLocations {
 
     public void initializeHints() throws FileNotFoundException{
         try{
-            File data = new File("Questions.csv");
+            File data = new File("HuntTheWumpus/Trivia/Questions.csv");
             Scanner readFile = new Scanner(data);
             while(readFile.hasNextLine()){
                 String currentLine = readFile.nextLine();
                 String[] splitLine = currentLine.split(",");
                 hints.add(splitLine[3]);
             }
+            readFile.close();
         } catch(IOException e){
             System.out.println("Error in writing file.");
             e.printStackTrace();
@@ -127,20 +121,12 @@ public class gameLocations {
         while(!isValid){
         //TODO: Create findAdjacentRooms() Method for Valid Moves 
             System.out.print("Where would you like to shoot?");
-            String direction = user.next();
+            String direction = console.next();
         }
         arrowCount--;  
         return arrowCount;
     }
 
-    private ArrayList<int[]> findAdjacentRooms(){ 
-        //Need Cave To Be Figured Out
-        ArrayList<int[]> adjacentRooms = new ArrayList<int[]>();
-        
-        return adjacentRooms;
-    }
-
-    public void initializeCave(){ }
-
+    public void initializeCave(Cave cave){ }
 
 }

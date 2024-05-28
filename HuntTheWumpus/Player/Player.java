@@ -3,17 +3,15 @@
 // Period 5
 // Hunt the Wumpus - Player Class
 
-package HuntTheWumpus.Player;
-import HuntTheWumpus.Cave.*;
-import HuntTheWumpus.gameControl.*;
-import HuntTheWumpus.gameLocations.*;
-import HuntTheWumpus.Player.*;
-import HuntTheWumpus.Sound.*;
-import HuntTheWumpus.Trivia.*;
-import HuntTheWumpus.UI.*;
-import HuntTheWumpus.Wumpus.*;
+package Player;
+
 
 import java.util.Scanner;
+
+import Wumpus.LazyWumpus;
+import gameLocations.gameLocations;
+
+import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class Player {
@@ -32,7 +30,7 @@ public class Player {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public Player(){
+    public Player() throws FileNotFoundException{
         gL = new gameLocations();
     }
     ///////////////////////
@@ -77,16 +75,16 @@ public class Player {
         choice = s.nextLine();
         if (choice.substring(0,1).equalsIgnoreCase("R")){
             move(choice.substring(0,1));
-            gL.PlayerPos[0]++;
+            gL.playerPos[0]++;
         } else if (choice.substring(0,1).equalsIgnoreCase("L")){
             move(choice.substring(0,1));
-            gL.PlayerPos[0]--;
+            gL.playerPos[0]--;
         } else if (choice.substring(0,1).equalsIgnoreCase("U")){
             move(choice.substring(0,1));
-            gL.PlayerPos[1]++;
+            gL.playerPos[1]++;
         } else if (choice.substring(0,1).equalsIgnoreCase("D")){
             move(choice.substring(0,1));
-            gL.PlayerPos[1]--;
+            gL.playerPos[1]--;
         } else if(choice.substring(0,1).equalsIgnoreCase("S")){
             gL.shootArrow(3);
             arrows--;
@@ -100,7 +98,7 @@ public class Player {
 
     // This method gets the location of the player
     public int[] getLocation(){
-        return gL.PlayerPos;
+        return gL.playerPos;
     }
 
     // This method is for when the player takes damage
