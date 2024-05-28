@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import Player.Player;
+import gameLocations.gameLocations;
+
 public class ActiveWumpus {
     /////////////////
     // PROPERTIES

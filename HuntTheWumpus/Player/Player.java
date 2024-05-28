@@ -7,6 +7,10 @@ package Player;
 
 
 import java.util.Scanner;
+
+import Wumpus.LazyWumpus;
+import gameLocations.gameLocations;
+
 import java.io.FileNotFoundException;
 import java.util.Random;
 
