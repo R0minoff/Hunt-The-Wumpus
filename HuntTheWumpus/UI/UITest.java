@@ -5,7 +5,7 @@
 
 package UI;
 
-
+import javax.swing.border.Border;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -106,7 +106,7 @@ public void draw(){
       you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
       add(you);
       }
-      
+       
     setVisible(true);
   }
     
@@ -116,10 +116,5 @@ public void draw(){
        UITest varUITest =  new UITest();
        varUITest.draw();
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
-    }
+  }
 }
