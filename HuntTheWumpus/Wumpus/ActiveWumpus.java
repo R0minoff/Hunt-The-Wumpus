@@ -9,29 +9,25 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-import Player.Player;
-import gameLocations.gameLocations;
-
 public class ActiveWumpus {
     /////////////////
     // PROPERTIES
     /////////////////
-    public gameLocations gL;
-    public Player p;
     public int health = 1;
+    public int[] wumpusPos;
 
     /////////////////
     // CONSTRUCTOR(S)
     /////////////////
     public ActiveWumpus(){
-
+        wumpusPos = new int[2];
     }
 
     /////////////////
     // METHODS
     /////////////////
     public int[] getLocation(){
-        return gL.wumpusPos;
+        return wumpusPos;
     }
 
     
