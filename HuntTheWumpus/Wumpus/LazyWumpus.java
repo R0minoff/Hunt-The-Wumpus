@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+import Player.Player;
+import Trivia.Trivia;
+import gameLocations.gameLocations;
+
 public class LazyWumpus {
     ///////////////////////
     // Properties & Fields
