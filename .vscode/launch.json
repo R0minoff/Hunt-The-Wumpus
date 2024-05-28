@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "UITest",
+            "request": "launch",
+            "mainClass": "UI.UITest",
+            "projectName": "Hunt-The-Wumpus-1_896ec01b"
+        },
+        {
+            "type": "java",
             "name": "TriviaTest",
             "request": "launch",
             "mainClass": "Trivia.TriviaTest",
