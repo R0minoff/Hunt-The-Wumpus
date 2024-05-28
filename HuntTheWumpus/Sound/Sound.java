@@ -3,7 +3,7 @@
 // Period 5
 // Hunt the Wumpus - Sound Class
 
-package HuntTheWumpus.Sound;
+package Sound;
 import java.io.File;
 
 import javax.sound.sampled.AudioSystem;

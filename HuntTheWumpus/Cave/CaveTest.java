@@ -3,7 +3,8 @@
 // 2/12/24
 // Hunt The Wumpus - Cave Class
 
-package HuntTheWumpus.Cave;
+package Cave;
+
 
 import java.util.Scanner;
 import java.io.File;
@@ -18,14 +19,11 @@ public class CaveTest {
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public CaveTest() throws FileNotFoundException {
- 
+    public static void main(String args[]) throws FileNotFoundException{
+        Cave myCave = new Cave();
     }
     ///////////////////////
     // Methods
     //////////////////////
-    public static void main(String[] args) throws FileNotFoundException{
-        new Cave();
-    }
 
 }
