@@ -2,8 +2,9 @@
 // February 16, 2024
 // Period 5
 // Hunt the Wumpus - Game Locations Class
+
 /*
-ABOUT THE OBJECT  
+ *  ABOUT THE OBJECT  *
  *  The gameLocations object tracks the locations of all objects in the current game. The tasks it performs are as follows:
  *      - Store and interact with the cave used for this game
  *      - Keep track of where the hazards are
@@ -35,8 +36,6 @@ ABOUT THE OBJECT
  */
 
 package HuntTheWumpus.gameLocations;
-import java.io.FileNotFoundException;
-
 import HuntTheWumpus.Cave.*;
 import HuntTheWumpus.gameControl.*;
 import HuntTheWumpus.gameLocations.*;
@@ -45,62 +44,101 @@ import HuntTheWumpus.Sound.*;
 import HuntTheWumpus.Trivia.*;
 import HuntTheWumpus.UI.*;
 import HuntTheWumpus.Wumpus.*;
-
-// Store and interact with the cave used for this game
-// keep track of where the hazards are
-// Keep track of where the Wumpus is. This includes controlling Wumpus behavior(that is, asleep awake, moving).
-// Keep track of where the player is
-// control arrow shooting
-// give any necessary warnings
-// obtain hints to help the player 
-// //////////////////////////////////
-
-
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 public class gameLocations2 {
     ///////////////////////
     // Properties & Fields
     //////////////////////
+    private static final Scanner user = new Scanner(System.in);
+    //private Cave     Cave;
+    private String   typeOfHazard;
+    private ArrayList<String> hints;
 
+    /** Positions **/
+    public     int[] wumpusPos;
+    public     int[] playerPos;
+    public     int[] hazardPos;
+    
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
     public gameLocations2() throws FileNotFoundException{
-        Cave map = new Cave();
+        hints     = new ArrayList<String>();
+        wumpusPos = new int[2];
+        playerPos = new int[2];
+        hazardPos = new int[2];
+        initializeHints();
+        //initializeCave();
     }
+
     ///////////////////////
     // Methods
     //////////////////////
-    // Interact, HazardsLocation, WumpusLocation, WumpusBehavior, PlayerLocation,giveHints, warnings
 
-    public Cave interact(Cave c, Player p){
-        return c;
+    public int[] findHazard(int[] pPos)
+    {
+        typeOfHazard = "";
+        giveWarning(typeOfHazard);
+        return hazardPos;
     }
 
-    public int[][] hazardsLocation(/*hazard h*/){
-        int[][] location = new int[10][10];
-        return location;
+    public int[] getWumpusLocation(){ return wumpusPos; }
+
+    public int[] getPlayerLocation(){ return playerPos; }
+
+    public void initializeHints() throws FileNotFoundException{
+        try{
+            File data = new File("../HuntTheWumpus/Trivia/Questions.csv");
+            Scanner readFile = new Scanner(data);
+            while(readFile.hasNextLine()){
+                hints.add(readFile.nextLine().split(",")[3]);
+            }
+        } catch(IOException e){
+            System.out.println("Error in writing file.");
+            e.printStackTrace();
+        }
     }
 
-    public int[][] wumpusLocation(Wumpus w){
-        int[][] location = new int[10][10];
-        return location;
+    public String giveHint() throws FileNotFoundException{ 
+        int randNum = (int) (Math.random() * (hints.size()));
+        return hints.remove(randNum);
     }
 
-    public String wumpusBehavior(Wumpus w){
-        String str = "";
-        return str;
+    public String giveWarning(String warnType){
+        if(warnType.equals("SuperBats")) 
+            return "Bats Nearby.";
+        else if(warnType.equals("Pit")) 
+            return "I feel a draft."; 
+        else if(warnType.equals("Wumpus")) 
+            return "I smell a Wumpus!";
+        return warnType;
     }
 
-    public int[][] playerLocation(Player p){
-        int[][] location = new int[10][10];
-        return location;
+    public int shootArrow(int arrowCount){
+        boolean isValid = false; 
+        while(!isValid){
+        //TODO: Create findAdjacentRooms() Method for Valid Moves 
+            System.out.print("Where would you like to shoot?");
+            String direction = user.next();
+        }
+        arrowCount--;  
+        return arrowCount;
     }
 
-    public void giveHints(Wumpus w, /*Hazard h, */ Player p){
-        System.out.println("yo");
+    private ArrayList<int[]> findAdjacentRooms(){ 
+        //Need Cave To Be Figured Out
+        ArrayList<int[]> adjacentRooms = new ArrayList<int[]>();
+        
+        return adjacentRooms;
     }
+
+    public void initializeCave(){ }
 
 
 }
