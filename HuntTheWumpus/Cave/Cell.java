@@ -1,22 +1,38 @@
+// Ishaan and Anders
+// Cell Class (individual stats per cell)
+
 package Cave;
-// data class
 
 public class Cell implements Comparable<Cell> {
+  ///////////////
   // properties
+  /////////////
   private int value;
   private int column;
   private int row;
-
+  private String type;
+  ////////////////
   // constructor
+  ///////////////
   public Cell() {
     this.value = 0;
     this.column = 0;
     this.row = 0;
+    this.type = "";
   }
-
+  //////////////
   // methods
+  /////////////
   public int getValue() {
     return value;
+  }
+
+  public String getType(){
+    return this.type;
+  }
+
+  public void setType(String type){
+    this.type = type;
   }
 
   public void setValue(int value) {
