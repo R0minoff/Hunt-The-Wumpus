@@ -21,9 +21,9 @@ public class CellMap {
   // constructor
   public CellMap(Cell c) {
     //when in class change these to the correct file path
-    wv = new File("C:\\Users\\ander_oup5or2\\Downloads\\Hunt-The-Wumpus\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WV.csv");
-    wh1 = new File("C:\\Users\\ander_oup5or2\\Downloads\\Hunt-The-Wumpus\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WH1.csv");
-    wh2 = new File("C:\\Users\\ander_oup5or2\\Downloads\\Hunt-The-Wumpus\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WH2.csv");
+    wv = new File("C:\\git\\Hunt-The-Wumpus-V2\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WV.csv");
+    wh1 = new File("C:\\git\\Hunt-The-Wumpus-V2\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WH1.csv");
+    wh2 = new File("C:\\git\\Hunt-The-Wumpus-V2\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WH2.csv");
     s = resetScanner(wv);
     wvList = createMap(s);
     s = resetScanner(wh1);
