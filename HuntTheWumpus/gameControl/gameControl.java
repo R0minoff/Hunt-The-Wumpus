@@ -1,4 +1,4 @@
-package HuntTheWumpus.gameControl;
+package gameControl;
 
 // Mateen and Eyouel 
 // February 12, 2024
