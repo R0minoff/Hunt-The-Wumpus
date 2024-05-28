@@ -19,7 +19,7 @@ public class CellMap {
   int[][] wh2List;
 
   // constructor
-  public CellMap(Cell c) {
+  public CellMap(javafx.scene.control.Cell cell) {
     //when in class change these to the correct file path
     wv = new File("C:\\Users\\ander_oup5or2\\Downloads\\Hunt-The-Wumpus\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WV.csv");
     wh1 = new File("C:\\Users\\ander_oup5or2\\Downloads\\Hunt-The-Wumpus\\Hunt-The-Wumpus\\HuntTheWumpus\\Cave\\WH1.csv");
@@ -31,8 +31,8 @@ public class CellMap {
     s = resetScanner(wh2);
     wh2List = createMap(s);
     s = resetScanner(wv);
-    isAjacent(c, s, wvList);
-    allAjacents(c);
+    isAjacent(cell, s, wvList);
+    allAjacents(cell);
     //allAjacentsWithWalls(c);
   }
 
@@ -96,16 +96,16 @@ public class CellMap {
     return allAjacents;
   }
   
-  public ArrayList<Cell> allAjacents(Cell c){
+  public ArrayList<Cell> allAjacents(javafx.scene.control.Cell currentCell){
     int counter = 0;
-    ArrayList<Cell> neighbors = isWrappedAjacent(c);
+    ArrayList<Cell> neighbors = isWrappedAjacent(currentCell);
     ArrayList<Cell> removeExcess = new ArrayList<Cell>();
     s = resetScanner(wv);
-    ArrayList<Cell> ajacentWVList = isAjacent(c, s, wvList);
+    ArrayList<Cell> ajacentWVList = isAjacent(currentCell, s, wvList);
     s = resetScanner(wh1);
-    ArrayList<Cell> ajacentWH1List = isAjacent(c, s, wh1List);
+    ArrayList<Cell> ajacentWH1List = isAjacent(currentCell, s, wh1List);
     s = resetScanner(wh2);
-    ArrayList<Cell> ajacentWH2List = isAjacent(c, s, wh2List);
+    ArrayList<Cell> ajacentWH2List = isAjacent(currentCell, s, wh2List);
     ArrayList<Cell> allAjacents = new ArrayList<Cell>();
     allAjacents.addAll(ajacentWVList);
     allAjacents.addAll(ajacentWH1List);

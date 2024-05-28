@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CaveTest",
+            "request": "launch",
+            "mainClass": "Cave.CaveTest",
+            "projectName": "Hunt-The-Wumpus_b08551d2"
+        },
+        {
+            "type": "java",
+            "name": "UITest",
+            "request": "launch",
+            "mainClass": "UI.UITest",
+            "projectName": "Hunt-The-Wumpus_b08551d2"
+        },
+        {
+            "type": "java",
             "name": "TriviaTest",
             "request": "launch",
             "mainClass": "Trivia.TriviaTest",
