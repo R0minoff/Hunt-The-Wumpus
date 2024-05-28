@@ -93,11 +93,14 @@ public class Trivia{
 
 
 
-        
+
         /*
          try{
             File tempFile = new File("C:\\\\Git-P5 smiley face\\\\Hunt-The-Wumpus\\\\HuntTheWumpus\\\\Trivia\\\\Questions.csv (copy).csv");
             FileWriter writer = new FileWriter(tempFile);
+            for(int i = 0; i < this.questions.length; i++){
+                writer.write(CONVERT EACH LINE OF QUESTIONS INTO A SINGLE STRING + "\n")
+            }
             
         } catch(Exception e){
             System.out.println("File not found");
