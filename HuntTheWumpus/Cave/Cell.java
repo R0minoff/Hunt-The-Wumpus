@@ -59,4 +59,13 @@ public class Cell implements Comparable<Cell> {
   public int compareTo(Cell otherCell){
     return Integer.compare(this.value, otherCell.value);
   }
+
+  public boolean compare(int otherCell){
+    if(this.getValue() == otherCell){
+      return true;
+    }else{
+      return false;
+    }
+  }
+
 }
