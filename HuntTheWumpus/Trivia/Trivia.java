@@ -26,7 +26,7 @@ public class Trivia{
     /////////////////////
 
     public Trivia(){
-        this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.file = new File("C:\\Users\\kjell\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
         getQuestions(this.file);
         askQuestions(5, 3);
@@ -88,25 +88,26 @@ public class Trivia{
         }
         System.out.println(Arrays.deepToString(this.questions));
 
-
-
-
-
-
-
-        /*
+        
          try{
-            File tempFile = new File("C:\\\\Git-P5 smiley face\\\\Hunt-The-Wumpus\\\\HuntTheWumpus\\\\Trivia\\\\Questions.csv (copy).csv");
+            File tempFile = new File("C:\\Users\\kjell\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions(copy).csv");
             FileWriter writer = new FileWriter(tempFile);
+            String line = "";
             for(int i = 0; i < this.questions.length; i++){
-                writer.write(CONVERT EACH LINE OF QUESTIONS INTO A SINGLE STRING + "\n")
+                for(int k = 0; k < R; k++){
+                    line += questions[i][k];
+                    line += ",";
+                }
+                writer.write(line + "\n");
+                line = "";
             }
-            
+            writer.close();
+            this.file = tempFile;
         } catch(Exception e){
-            System.out.println("File not found");
+            System.out.println("File not found!!!");
         }
         
-         */
+         
         
 
         //REMOVE QUESTIONS FROM CSV
