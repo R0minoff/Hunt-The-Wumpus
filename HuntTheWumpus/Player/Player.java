@@ -96,11 +96,9 @@ public class Player {
             chooseMove();
         }
     }
-*/
-    public int attack(int arrows){
+*/  
+    public void attack(Cell c){
         arrows--;
-
-        return arrows;
     }
 
     // This method is for when the player takes damage
