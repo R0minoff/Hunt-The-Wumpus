@@ -36,7 +36,7 @@
  */
 
 package gameLocations;
-
+import Cave.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -56,7 +56,7 @@ public class gameLocations {
     public     int[] wumpusPos;
     public     int[] playerPos;
     public     int[] hazardPos;
-    
+
 
     ///////////////////////
     // Constructor(s)
@@ -74,11 +74,14 @@ public class gameLocations {
     // Methods
     //////////////////////
 
-    public int[] findHazard(int[] pPos)
-    {
-        typeOfHazard = "";
-        giveWarning(typeOfHazard);
-        return hazardPos;
+    public void findHazard(int[] pPos, Cave cave){
+        cell[][] map = cave.getMap();
+        ArrayList<cell> adjRooms = cave.allAdjacents(map[pPos[0]][pPos[1]]);
+        for(cell c : adjRooms){
+            if(c.getType() != ""){
+                System.out.println(giveWarning(c.getType()));
+            }
+        } 
     }
 
     public int[] getWumpusLocation(){ return wumpusPos; }
@@ -116,17 +119,57 @@ public class gameLocations {
         return warnType;
     }
 
+    //TODO: Move into GameControl
     public int shootArrow(int arrowCount){
         boolean isValid = false; 
+        cell[] adjRooms = cave.getAdjacentRooms();
         while(!isValid){
-        //TODO: Create findAdjacentRooms() Method for Valid Moves 
             System.out.print("Where would you like to shoot?");
             String direction = console.next();
+            for(cell c : adjRooms){
+                //TODO: Get true or false doors for cell
+            }
         }
         arrowCount--;  
         return arrowCount;
     }
 
-    public void initializeCave(Cave cave){ }
+    public void initializeCave(Cave cave) {
+        cell[][] map = cave.getMap();
+        int wumpusPlace = (int) (Math.random() * 31);
+        int bat1Place = (int) (Math.random() * 31);
+        int bat2Place = (int) (Math.random() * 31);
+        int pit1Place = (int) (Math.random() * 31);
+        int pit2Place = (int) (Math.random() * 31);
+        int count = 0;
+        for (int i = 0; i < map.length; i++) {
+          for (int j = 0; j < map[0].length; j++) {
+            count += 1;
+            if (count == wumpusPlace) {
+              map[i][j].setType("Wumpus");
+            } else if (count == bat1Place) {
+              while (bat1Place == wumpusPlace) {
+                bat1Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("SuperBats");
+            } else if (count == bat2Place) {
+              while (bat2Place == wumpusPlace) {
+                bat2Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("SuperBats");
+            } else if (count == pit1Place) {
+              while (pit1Place == wumpusPlace) {
+                pit1Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("Pit");
+            } else if (count == pit2Place) {
+              while (pit2Place == wumpusPlace) {
+                pit2Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("Pit");
+            }
+          }
+        }
+      }
 
 }
