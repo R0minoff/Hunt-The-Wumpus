@@ -138,7 +138,9 @@ public class gameLocations2 {
         return adjacentRooms;
     }
 
-    public void initializeCave(){ }
+    public void initializeCave(Cave cave){ 
+        
+    }
 
 
 }
