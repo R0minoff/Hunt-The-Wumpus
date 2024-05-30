@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import Cave.CellMap;
 import Player.Player;
-import apple.laf.JRSUIConstants.Direction;
 import javafx.scene.control.Cell;
 
 public class gameControl {

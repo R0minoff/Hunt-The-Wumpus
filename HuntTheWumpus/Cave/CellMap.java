@@ -63,7 +63,7 @@ public class CellMap {
     }
     allAjacents.removeAll(removeExcess);
       int randomWall1 = (int)(Math.random() * allAjacents.size());
-      int randomWall2 = (int)(Math.random() * allAjacents.size());
+      int randomWall2 = (int)(Math.random() * allAjacents.size());m
       while(randomWall1 == randomWall2){
         randomWall2 = (int)(Math.random() * allAjacents.size());
       }
