@@ -90,8 +90,7 @@ public class Trivia{
 
         
          try{
-            File tempFile = new File("HuntTheWumpus\\Trivia\\Questions(copy).csv");
-            FileWriter writer = new FileWriter(tempFile);
+            FileWriter writer = new FileWriter(this.file);
             String line = "";
             for(int i = 0; i < this.questions.length; i++){
                 for(int k = 0; k < R; k++){
