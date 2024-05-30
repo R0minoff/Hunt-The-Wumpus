@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "gameLocationsTest",
+            "request": "launch",
+            "mainClass": "gameLocations.gameLocationsTest",
+            "projectName": "Hunt-The-Wumpus_7122be69"
+        },
+        {
+            "type": "java",
             "name": "CaveTest",
             "request": "launch",
             "mainClass": "Cave.CaveTest",
