@@ -18,8 +18,8 @@ public class Trivia{
     //////////////////////
     private File file;
     public String[][] questions;
-    private static final int C = 7; //Idk know how but it's backwards
-    private static final int R = 4;
+    private static final int C = 8; //Idk know how but it's backwards
+    private static final int R = 3;
 
     /////////////////////
     // Constructor(s)
@@ -65,7 +65,7 @@ public class Trivia{
             indexes.add(this.questions[r][0]);
             System.out.println(active);
             String userAns = s.nextLine();
-            if(userAns.equalsIgnoreCase(this.questions[r][3])){
+            if(userAns.equalsIgnoreCase(this.questions[r][2])){
                 numOfCorrect++;
                 System.out.println("That is correct!");
             } else {
