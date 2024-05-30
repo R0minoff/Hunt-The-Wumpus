@@ -63,9 +63,7 @@ public class gameLocations {
     //////////////////////
     public gameLocations() throws FileNotFoundException{
         hints     = new ArrayList<String>();
-        wumpusPos = new int[2];
-        playerPos = new int[2];
-        hazardPos = new int[2];
+        hazardPos = new int[4];
         initializeHints();
         //initializeCave();
     }
@@ -84,9 +82,9 @@ public class gameLocations {
         } 
     }
 
-    public int[] getWumpusLocation(){ return wumpusPos; }
+    public int getWumpusLocation(){ return wumpusPos; }
 
-    public int[] getPlayerLocation(){ return playerPos; }
+    public int getPlayerLocation(){ return playerPos; }
 
     public void initializeHints() throws FileNotFoundException{
         try{
