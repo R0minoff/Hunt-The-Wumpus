@@ -18,15 +18,15 @@ public class Trivia{
     //////////////////////
     private File file;
     public String[][] questions;
-    private static final int C = 7; //Idk know how but it's backwards
-    private static final int R = 4;
+    private static final int C = 8; //Idk know how but it's backwards
+    private static final int R = 3;
 
     /////////////////////
     // Constructor(s)
     /////////////////////
 
     public Trivia(){
-        this.file = new File("C:\\Git-P5 smiley face\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
         getQuestions(this.file);
         askQuestions(5, 3);
@@ -65,7 +65,7 @@ public class Trivia{
             indexes.add(this.questions[r][0]);
             System.out.println(active);
             String userAns = s.nextLine();
-            if(userAns.equalsIgnoreCase(this.questions[r][3])){
+            if(userAns.equalsIgnoreCase(this.questions[r][2])){
                 numOfCorrect++;
                 System.out.println("That is correct!");
             } else {
@@ -88,22 +88,26 @@ public class Trivia{
         }
         System.out.println(Arrays.deepToString(this.questions));
 
-
-
-
-
-
         
-        /*
          try{
-            File tempFile = new File("C:\\\\Git-P5 smiley face\\\\Hunt-The-Wumpus\\\\HuntTheWumpus\\\\Trivia\\\\Questions.csv (copy).csv");
+            File tempFile = new File("HuntTheWumpus\\Trivia\\Questions(copy).csv");
             FileWriter writer = new FileWriter(tempFile);
-            
+            String line = "";
+            for(int i = 0; i < this.questions.length; i++){
+                for(int k = 0; k < R; k++){
+                    line += questions[i][k];
+                    line += ",";
+                }
+                writer.write(line + "\n");
+                line = "";
+            }
+            writer.close();
+
         } catch(Exception e){
-            System.out.println("File not found");
+            System.out.println("File not found!!!");
         }
         
-         */
+         
         
 
         //REMOVE QUESTIONS FROM CSV
