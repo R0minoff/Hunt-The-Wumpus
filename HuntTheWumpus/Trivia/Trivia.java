@@ -26,10 +26,10 @@ public class Trivia{
     /////////////////////
 
     public Trivia(){
-        this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv");
-        this.questions = new String[C][R];
-        getQuestions(this.file);
-        askQuestions(5, 3);
+        this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv"); //Creates a new file
+        this.questions = new String[C][R]; //Initializes questions to a 2D String array with the length and width of the csv
+        getQuestions(this.file); // This method fills the questions list with data from the csv
+        askQuestions(5, 3); // This questions returns whether or not the user got the needed correct answers
     }
 
     ///////////////////////
@@ -37,35 +37,35 @@ public class Trivia{
     //////////////////////
 
     public void getQuestions(File f){
-        ArrayList<String[]> lines = new ArrayList<>();
+        ArrayList<String[]> lines = new ArrayList<>(); //Creates an ArrayList of string arrays
         try{
-            Scanner s = new Scanner(f);
+            Scanner s = new Scanner(f); //Creates a new scanner to read the questions csv file
             while(s.hasNextLine()){
-                String line = s.nextLine();
-                String[] parts = line.split(",");
-                lines.add(parts);
+                String line = s.nextLine(); //Initializes a string that is equal to the line of the scanner
+                String[] parts = line.split(","); //Splits the previous string into an array
+                lines.add(parts); //Adds the string array to the ArrayList lines
             }
             s.close();
-        } catch(FileNotFoundException e){
+        } catch(FileNotFoundException e){ //I use the catch in case the file is not found
             System.out.println("File not found");
         }
-        Collections.shuffle(lines);
+        Collections.shuffle(lines); // This fully shuffles the arrayList lines into random order
         for(int i = 0; i < lines.size(); i++){
-            this.questions[i] = lines.get(i);
+            this.questions[i] = lines.get(i); //The for loop sets each line of questions equal to each array from lines
         }
     }
 
     public boolean askQuestions(int numOfQuestions, int needCorrect){
         int numOfCorrect = 0;
         String active = "";
-        ArrayList<String> indexes = new ArrayList<String>();
+        ArrayList<String> indexes = new ArrayList<String>(); // This arrayList keeps track of which questions were asked so it knows what needs to be removed from the csv
         Scanner s = new Scanner(System.in);
-        for(int r = 0; r < numOfQuestions; r++){
-            active = this.questions[r][1];
+        for(int r = 0; r < numOfQuestions; r++){ // This for loop asks the number of questions specified and it checks if the user got it right
+            active = this.questions[r][1]; //This sets the string active to the part of the array that contains the question
             indexes.add(this.questions[r][0]);
             System.out.println(active);
             String userAns = s.nextLine();
-            if(userAns.equalsIgnoreCase(this.questions[r][2])){
+            if(userAns.equalsIgnoreCase(this.questions[r][2])){ //Checks if the user got the question right
                 numOfCorrect++;
                 System.out.println("That is correct!");
             } else {
@@ -74,8 +74,8 @@ public class Trivia{
         }
         s.close();
 
-        ArrayList<String[]> tempQuestions = new ArrayList<String[]>();
-        for(int i = 0; i < this.questions.length; i++){
+        ArrayList<String[]> tempQuestions = new ArrayList<String[]>(); //Creates an arraylist
+        for(int i = 0; i < this.questions.length; i++){ //Adds all of the questions that weren't asked to the arrayList
             if(indexes.contains(this.questions[i][0])){
                 continue;
             } else {
@@ -83,22 +83,21 @@ public class Trivia{
             }
         }
         this.questions = new String[tempQuestions.size()][R];
-        for(int i = 0; i < tempQuestions.size(); i++){
+        for(int i = 0; i < tempQuestions.size(); i++){  //Sets the global questions to the temp array
             this.questions[i] = tempQuestions.get(i);
         }
         System.out.println(Arrays.deepToString(this.questions));
 
         
          try{
-            File tempFile = new File("HuntTheWumpus\\Trivia\\Questions(copy).csv");
-            FileWriter writer = new FileWriter(tempFile);
+            FileWriter writer = new FileWriter(this.file); //Instantiates a new filewriter
             String line = "";
-            for(int i = 0; i < this.questions.length; i++){
+            for(int i = 0; i < this.questions.length; i++){ //The for loop adds all of the info from questions into the csv file, this is what was already in questions except it removed questions that were asked
                 for(int k = 0; k < R; k++){
                     line += questions[i][k];
                     line += ",";
                 }
-                writer.write(line + "\n");
+                writer.write(line + "\n"); // Writers the line and starts a new line
                 line = "";
             }
             writer.close();
@@ -107,15 +106,8 @@ public class Trivia{
             System.out.println("File not found!!!");
         }
         
-         
         
-
-        //REMOVE QUESTIONS FROM CSV
-        //--DONE
-        //--Make a new file
-        //--Add all of the lines of the old file to the new file except for the asked questions
-        //--Would need to rerun the getQuestions method with the new file in order to update the 2D array
-        return numOfCorrect >= needCorrect;
+        return numOfCorrect >= needCorrect; // Decides wether or not the user met the goal
     }
      
 }
