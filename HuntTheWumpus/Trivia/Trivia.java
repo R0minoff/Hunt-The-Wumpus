@@ -26,7 +26,7 @@ public class Trivia{
     /////////////////////
 
     public Trivia(){
-        this.file = new File("C:\\Hunt-The-Wumpus-1\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
         getQuestions(this.file);
         askQuestions(5, 3);
@@ -73,29 +73,41 @@ public class Trivia{
             }
         }
         s.close();
-        System.out.println(this.questions.length);
-        //shouldnt be 7 eventually, just for testing
-        //as of right now temp questions has nulls, need to fix that
-        String[][] tempQuestions = new String[7][4];
+
+        ArrayList<String[]> tempQuestions = new ArrayList<String[]>();
         for(int i = 0; i < this.questions.length; i++){
             if(indexes.contains(this.questions[i][0])){
                 continue;
             } else {
-                tempQuestions[i] = this.questions[i];
+                tempQuestions.add(this.questions[i]);
             }
         }
-        this.questions = tempQuestions;
+        this.questions = new String[tempQuestions.size()][R];
+        for(int i = 0; i < tempQuestions.size(); i++){
+            this.questions[i] = tempQuestions.get(i);
+        }
         System.out.println(Arrays.deepToString(this.questions));
-        /*
+
+        
          try{
-            File tempFile = new File("C:\\\\Git-P5 smiley face\\\\Hunt-The-Wumpus\\\\HuntTheWumpus\\\\Trivia\\\\Questions.csv (copy).csv");
+            File tempFile = new File("HuntTheWumpus\\Trivia\\Questions(copy).csv");
             FileWriter writer = new FileWriter(tempFile);
-            
+            String line = "";
+            for(int i = 0; i < this.questions.length; i++){
+                for(int k = 0; k < R; k++){
+                    line += questions[i][k];
+                    line += ",";
+                }
+                writer.write(line + "\n");
+                line = "";
+            }
+            writer.close();
+
         } catch(Exception e){
-            System.out.println("File not found");
+            System.out.println("File not found!!!");
         }
         
-         */
+         
         
 
         //REMOVE QUESTIONS FROM CSV

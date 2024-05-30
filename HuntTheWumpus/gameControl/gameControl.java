@@ -1,57 +1,74 @@
 package gameControl;
 
+import java.util.ArrayList;
 // Mateen and Eyouel 
 // February 12, 2024
 // Period 5
 // Hunt the Wumpus - Game Control Class
 import java.util.Scanner;
 
+import Cave.CellMap;
+import Player.Player;
+import apple.laf.JRSUIConstants.Direction;
+import javafx.scene.control.Cell;
+
 public class gameControl {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-
-    // Example properties
+    private CellMap cellMap;
+    private Player player;
+    private boolean isGameOver;
+    private boolean isWumpusKilled;
     private int numberOfPlayers;
-    private boolean isGameRunning;
     private Scanner scanner;
     ///////////////////////
     // Constructor(s)
     //////////////////////
 
     public gameControl() {
-        // Initialize properties
         numberOfPlayers = 0;
-        isGameRunning = false;
-        this.scanner = new Scanner(System.in);
+        cellMap = new CellMap(new Cell(1)); 
+        player = new Player();
+        isGameOver = false;
+        isWumpusKilled = false;
     }
+    private Cave.Cell getNextCell(Cell currentCell, Direction direction) {
+        ArrayList<Cave.Cell> adjacents = cellMap.allAjacents(currentCell);
+        int targetValue = -1;
+        switch (direction) {
+            case direction:
+                targetValue = cellMap.getUp(currentCell.getValue());
+                break;
+            case direction:
+                targetValue = cellMap.getDown(currentCell.getValue());
+                break;
+            case direction:
+                targetValue = cellMap.getUpLeft(currentCell.getValue());
+                break;
+            case direction:
+                targetValue = cellMap.getUpRight(currentCell.getValue());
+                break;
+        }
+
+        for (Cave.Cell cell : adjacents) {
+            if (cell.compare(targetValue)) {
+                return cell;
+            }
+        }
+        return null;
+    }
+
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    // Method to start the game
-    public void startGame() {
-
-
+    public boolean isGameOver() {
+        return isGameOver;
     }
 
-    // Method to end the game
-    public void endGame() {
-
+    public boolean isWumpusKilled() {
+        return isWumpusKilled;
     }
-
-    // Method to handle player input
-    public void handleInput() {
-
-    }
-
-    // Method to update game state
-    public void updateGameState() {
-
-    }
-
-    ///////////////////////
-    // Main method for testing
-    ///////////////////////
 }
