@@ -26,7 +26,7 @@ public class Trivia{
     /////////////////////
 
     public Trivia(){
-        this.file = new File("C:\\Users\\kjell\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions.csv");
+        this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new String[C][R];
         getQuestions(this.file);
         askQuestions(5, 3);
@@ -90,7 +90,7 @@ public class Trivia{
 
         
          try{
-            File tempFile = new File("C:\\Users\\kjell\\Hunt-The-Wumpus\\HuntTheWumpus\\Trivia\\Questions(copy).csv");
+            File tempFile = new File("HuntTheWumpus\\Trivia\\Questions(copy).csv");
             FileWriter writer = new FileWriter(tempFile);
             String line = "";
             for(int i = 0; i < this.questions.length; i++){
@@ -102,7 +102,7 @@ public class Trivia{
                 line = "";
             }
             writer.close();
-            this.file = tempFile;
+
         } catch(Exception e){
             System.out.println("File not found!!!");
         }
