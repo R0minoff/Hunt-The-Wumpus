@@ -6,10 +6,17 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
+            "name": "UITest",
+            "request": "launch",
+            "mainClass": "UI.UITest",
+            "projectName": "Hunt-The-Wumpus-1_896ec01b"
+=======
             "name": "CaveTest",
             "request": "launch",
             "mainClass": "Cave.CaveTest",
             "projectName": "Hunt-The-Wumpus_fe75976f"
+>>>>>>> 0bc9df95354b72bf4496e2ea09728fd85cb0322f
         },
         {
             "type": "java",
