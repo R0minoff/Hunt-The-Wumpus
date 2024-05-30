@@ -10,7 +10,7 @@ public class TrivaUI {
         final JFrame parent = new JFrame();
         JButton button = new JButton();
 
-        button.setText("Click me to show dialog!");
+        button.setText("Click me if your gay!");
         parent.add(button);
         parent.pack();
         parent.setVisible(true);
