@@ -84,6 +84,10 @@ public class gameLocations {
 
     public int getWumpusLocation(){ return wumpusPos; }
 
+    public void setWumpusLocation(int newLoc){ wumpusPos = newLoc; }
+
+    public void setPlayerLocation(int newLoc){ playerPos = newLoc; }
+
     public int getPlayerLocation(){ return playerPos; }
 
     public void initializeHints() throws FileNotFoundException{
