@@ -65,6 +65,7 @@ public class UITest extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         HexagonButton button = (HexagonButton) e.getSource();
         System.out.println(button.getText());
+        
     }
     
 }
