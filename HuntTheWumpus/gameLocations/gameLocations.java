@@ -73,9 +73,9 @@ public class gameLocations {
     //////////////////////
 
     public void findHazard(int[] pPos, Cave cave){
-        cell[][] map = cave.getMap();
-        ArrayList<cell> adjRooms = cave.allAdjacents(map[pPos[0]][pPos[1]]);
-        for(cell c : adjRooms){
+        Cell[][] map = cave.getMap();
+        ArrayList<Cell> adjRooms = cave.allAdjacents(map[pPos[0]][pPos[1]]);
+        for(Cell c : adjRooms){
             if(c.getType() != ""){
                 System.out.println(giveWarning(c.getType()));
             }
@@ -83,6 +83,10 @@ public class gameLocations {
     }
 
     public int getWumpusLocation(){ return wumpusPos; }
+
+    public void setWumpusLocation(int newLoc){ wumpusPos = newLoc; }
+
+    public void setPlayerLocation(int newLoc){ playerPos = newLoc; }
 
     public int getPlayerLocation(){ return playerPos; }
 
@@ -117,23 +121,8 @@ public class gameLocations {
         return warnType;
     }
 
-    //TODO: Move into GameControl
-    public int shootArrow(int arrowCount){
-        boolean isValid = false; 
-        cell[] adjRooms = cave.getAdjacentRooms();
-        while(!isValid){
-            System.out.print("Where would you like to shoot?");
-            String direction = console.next();
-            for(cell c : adjRooms){
-                //TODO: Get true or false doors for cell
-            }
-        }
-        arrowCount--;  
-        return arrowCount;
-    }
-
     public void initializeCave(Cave cave) {
-        cell[][] map = cave.getMap();
+        Cell[][] map = cave.getMap();
         int wumpusPlace = (int) (Math.random() * 31);
         int bat1Place = (int) (Math.random() * 31);
         int bat2Place = (int) (Math.random() * 31);
