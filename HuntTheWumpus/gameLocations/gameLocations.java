@@ -55,7 +55,7 @@ public class gameLocations {
     /** Positions **/
     public     int wumpusPos;
     public     int playerPos;
-    public     int hazardPos;
+    public   int[] hazardPos;
 
 
     ///////////////////////
