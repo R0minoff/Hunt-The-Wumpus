@@ -52,7 +52,7 @@ public class gameControl {
         }
 
         for (Cave.Cell cell : adjacents) {
-            if (cell.getValue() == targetValue) {
+            if (cell.compare(targetValue)) {
                 return cell;
             }
         }

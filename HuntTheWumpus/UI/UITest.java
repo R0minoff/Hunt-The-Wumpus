@@ -10,6 +10,7 @@ public class UITest extends JFrame implements ActionListener {
     private static final int HEX_SIZE = 50;
     private static final int HEX_WIDTH = (int) (Math.sqrt(3) * HEX_SIZE);
     private static final int HEX_HEIGHT = HEX_SIZE * 2;
+    private String number;
 
     public UITest() {
         draw();
@@ -64,8 +65,11 @@ public class UITest extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         HexagonButton button = (HexagonButton) e.getSource();
-        System.out.println(button.getText());
-        
+        this.number = button.getText();
+        System.out.println(number);
     }
     
+    public String getNumber(){
+        return this.number;
+    }
 }
