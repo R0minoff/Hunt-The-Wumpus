@@ -4,6 +4,7 @@
 // Hunt the Wumpus - Player Class
 
 package Player;
+import Cave.Cell;
 
 
 import java.util.Scanner;
