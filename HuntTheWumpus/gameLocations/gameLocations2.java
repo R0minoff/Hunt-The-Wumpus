@@ -146,7 +146,12 @@ public class gameLocations2 {
           int r = 0;
           while(readFile.hasNextLine()){
               String[] nums = readFile.nextLine().split(",");
+              for(int c = 0; c < 6; c++){
+                map2[0][c] = nums[c];
+              }
+
           }
+        for(int y = 0; )
         int wumpusPlace = (int) (Math.random() * 31);
         int bat1Place = (int) (Math.random() * 31);
         int bat2Place = (int) (Math.random() * 31);
