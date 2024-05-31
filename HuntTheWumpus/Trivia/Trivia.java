@@ -18,7 +18,7 @@ public class Trivia{
     //////////////////////
     private File file;
     public String[][] questions;
-    private static final int C = 8; //Idk know how but it's backwards
+    private static final int C = 15; //Idk know how but it's backwards
     private static final int R = 3;
 
     /////////////////////
@@ -86,7 +86,6 @@ public class Trivia{
         for(int i = 0; i < tempQuestions.size(); i++){  //Sets the global questions to the temp array
             this.questions[i] = tempQuestions.get(i);
         }
-        System.out.println(Arrays.deepToString(this.questions));
 
         
          try{

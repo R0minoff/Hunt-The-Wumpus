@@ -139,53 +139,18 @@ public class gameLocations2 {
     }
 
     public void initializeCave(Cave cave) {
-        Cell[][] map = cave.getMap();
-        String[][] map2 = String[5][6];
-        File data = new File("../HuntTheWumpus/Cave/WH1.csv");
-          Scanner readFile = new Scanner(data);
-          int r = 0;
-          while(readFile.hasNextLine()){
-              String[] nums = readFile.nextLine().split(",");
-              for(int c = 0; c < 6; c++){
-                map2[0][c] = nums[c];
-              }
-
-          }
-        for(int y = 0; )
-        int wumpusPlace = (int) (Math.random() * 31);
-        int bat1Place = (int) (Math.random() * 31);
-        int bat2Place = (int) (Math.random() * 31);
-        int pit1Place = (int) (Math.random() * 31);
-        int pit2Place = (int) (Math.random() * 31);
-        int count = 0;
-        for (int i = 0; i < map.length; i++) {
-          for (int j = 0; j < map[0].length; j++) {
-            count += 1;
-            if (count == wumpusPlace) {
-              map[i][j].setType("Wumpus");
-            } else if (count == bat1Place) {
-              while (bat1Place == wumpusPlace) {
-                bat1Place = (int) (Math.random() * 31);
-              }
-              map[i][j].setType("SuperBats");
-            } else if (count == bat2Place) {
-              while (bat2Place == wumpusPlace) {
-                bat2Place = (int) (Math.random() * 31);
-              }
-              map[i][j].setType("SuperBats");
-            } else if (count == pit1Place) {
-              while (pit1Place == wumpusPlace) {
-                pit1Place = (int) (Math.random() * 31);
-              }
-              map[i][j].setType("Pit");
-            } else if (count == pit2Place) {
-              while (pit2Place == wumpusPlace) {
-                pit2Place = (int) (Math.random() * 31);
-              }
-              map[i][j].setType("Pit");
-            }
+       // Cell[][] map = cave.getMap();
+        String[][] map2 = new String[5][6];
+        File file = new File("../HuntTheWumpus/Cave/WH1.csv");
+        Scanner readFile = new Scanner(file);
+        String[] data = readFile.nextLine().split(",");
+        int i = 0;
+        for(int y = 0; y < map2.length; y++){
+          for(int x = 0; x < map2[0].length; x++){
+            map2[y][x] = data[i];
+            i++;
           }
         }
-      }
+    }
 
 }
