@@ -4,6 +4,7 @@
 // Hunt the Wumpus - Player Class
 
 package Player;
+import Cave.Cell;
 
 
 import java.util.Scanner;
@@ -96,11 +97,9 @@ public class Player {
             chooseMove();
         }
     }
-*/
-    public int attack(int arrows){
+*/  
+    public void attack(Cell c){
         arrows--;
-
-        return arrows;
     }
 
     // This method is for when the player takes damage
