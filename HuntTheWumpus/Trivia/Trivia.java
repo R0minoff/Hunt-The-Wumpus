@@ -26,7 +26,6 @@ public class Trivia{
         this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv");
         this.questions = new ArrayList<Question>();
         createQuestions(this.file);
-        getQuestion();
     }
 
     ///////////////////////
