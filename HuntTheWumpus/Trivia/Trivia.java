@@ -17,9 +17,7 @@ public class Trivia{
     // Properties & Fields
     //////////////////////
     private File file;
-    public String[][] questions;
-    private static final int C = 7; //Idk know how but it's backwards
-    private static final int R = 4;
+    private ArrayList<Question> questions;
 
     /////////////////////
     // Constructor(s)
@@ -27,35 +25,33 @@ public class Trivia{
 
     public Trivia(){
         this.file = new File("HuntTheWumpus\\Trivia\\Questions.csv");
-        this.questions = new String[C][R];
-        getQuestions(this.file);
-        askQuestions(5, 3);
+        this.questions = new ArrayList<Question>();
+        createQuestions(this.file);
+        getQuestion();
     }
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public void getQuestions(File f){
-        ArrayList<String[]> lines = new ArrayList<>();
+    public void createQuestions(File f){
         try{
             Scanner s = new Scanner(f);
             while(s.hasNextLine()){
                 String line = s.nextLine();
                 String[] parts = line.split(",");
-                lines.add(parts);
+                this.questions.add(new Question(parts[0], parts[1], parts[2]));
             }
             s.close();
         } catch(FileNotFoundException e){
             System.out.println("File not found");
         }
-        Collections.shuffle(lines);
-        for(int i = 0; i < lines.size(); i++){
-            this.questions[i] = lines.get(i);
-        }
+        Collections.shuffle(this.questions);
     }
 
-    public boolean askQuestions(int numOfQuestions, int needCorrect){
+
+/*
+ public boolean askQuestions(int numOfQuestions, int needCorrect){
         int numOfCorrect = 0;
         String active = "";
         ArrayList<String> indexes = new ArrayList<String>();
@@ -107,15 +103,22 @@ public class Trivia{
             System.out.println("File not found!!!");
         }
         
-         
-        
-
-        //REMOVE QUESTIONS FROM CSV
-        //--DONE
-        //--Make a new file
-        //--Add all of the lines of the old file to the new file except for the asked questions
-        //--Would need to rerun the getQuestions method with the new file in order to update the 2D array
         return numOfCorrect >= needCorrect;
     }
-     
+ */
+    
+    public Question getQuestion(){
+        Question tempQuestion = this.questions.get(0);
+        this.questions.remove(0);
+        try{
+            FileWriter writer = new FileWriter(this.file);
+            for(int i = 0; i < this.questions.size(); i++){
+                writer.write(this.questions.get(i).toString() + "\n");
+            }
+            writer.close();
+        } catch(Exception e){
+            System.out.println("File not found!!!");
+        }
+        return tempQuestion;
+    }
 }
