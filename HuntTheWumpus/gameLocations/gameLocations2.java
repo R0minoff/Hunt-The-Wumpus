@@ -78,16 +78,15 @@ public class gameLocations2 {
         batsPos   = new int[2];
         pitsPos   = new int[2];
         initializeHints();
-        //initializeCave();
-
+        initializeCave();
+        initializeHazards();
     }
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public int[] findHazard(int[] pPos)
-    {
+    public int[] findHazard(int[] pPos){
         typeOfHazard = "";
         giveWarning(typeOfHazard);
         return hazardPos;
@@ -143,7 +142,7 @@ public class gameLocations2 {
         return adjacentRooms;
     }
 
-    public void initializeCave(Cave cave) {
+    private void initializeCave() throws FileNotFoundException{
        // Cell[][] map = cave.getMap();
         
         File file = new File("../HuntTheWumpus/Cave/WH1.csv");
@@ -158,7 +157,7 @@ public class gameLocations2 {
         }
     }
 
-    public void initializeHazards() {
+    private void initializeHazards() {
         for(int r = 0; r < map.length; r++){
             for(int c = 0; c < map[0].length; c++){
                 // Checks wumpus
@@ -181,10 +180,12 @@ public class gameLocations2 {
                 //Checks player
                 else if(map[r][c].getType().equals("Player"))
                     playerPos = map[r][c].getCellNum;
+            }
         }
     }
-
-    public 
+    public void updateLocation(){
+        
+    }
 
 
 }
