@@ -9,7 +9,6 @@ import java.util.Scanner;
 
 import Cave.CellMap;
 import Player.Player;
-import apple.laf.JRSUIConstants.Direction;
 import javafx.scene.control.Cell;
 
 public class gameControl {
@@ -52,7 +51,7 @@ public class gameControl {
         }
 
         for (Cave.Cell cell : adjacents) {
-            if (cell.getValue() == targetValue) {
+            if (cell.compare(targetValue)) {
                 return cell;
             }
         }

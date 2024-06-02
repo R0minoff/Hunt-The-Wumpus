@@ -4,6 +4,7 @@
 // Hunt the Wumpus - Player Class
 
 package Player;
+import Cave.Cell;
 
 
 import java.util.Scanner;
@@ -19,17 +20,25 @@ public class Player {
     public int health = 1;
     public String choice;
     public int arrows = 3;
-    public int[] playerPos;
+    public int playerPos;
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
     public Player(){
-        playerPos = new int[2]; 
+    
     }
     ///////////////////////
     // Methods
     //////////////////////
+
+    public int setPlayerPos(int playerPos){
+        return this.playerPos = playerPos;
+    }
+
+    public int getPlayerPos(){
+        return playerPos;
+    }
 
     // This method gets the name of the Player
     public String getName(){
@@ -61,7 +70,7 @@ public class Player {
             }
         }
     }
-
+/* 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
         Scanner s = new Scanner(System.in);
@@ -79,8 +88,7 @@ public class Player {
         } else if (choice.substring(0,1).equalsIgnoreCase("D")){
             move(choice.substring(0,1));
             playerPos[1]--;
-        } else if(choice.substring(0,1).equalsIgnoreCase("S")){
-            
+        } else if(choice.substring(0,1).equalsIgnoreCase("S")){    
             arrows--;
         }else {
             System.out.println();
@@ -89,16 +97,9 @@ public class Player {
             chooseMove();
         }
     }
-
-    public int attack(int arrows){
+*/  
+    public void attack(Cell c){
         arrows--;
-
-        return arrows;
-    }
-
-    // This method gets the location of the player
-    public int[] getLocation(){
-        return playerPos;
     }
 
     // This method is for when the player takes damage

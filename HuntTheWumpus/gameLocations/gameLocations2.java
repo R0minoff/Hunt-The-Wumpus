@@ -138,7 +138,19 @@ public class gameLocations2 {
         return adjacentRooms;
     }
 
-    public void initializeCave(){ }
-
+    public void initializeCave(Cave cave) {
+       // Cell[][] map = cave.getMap();
+        String[][] map2 = new String[5][6];
+        File file = new File("../HuntTheWumpus/Cave/WH1.csv");
+        Scanner readFile = new Scanner(file);
+        String[] data = readFile.nextLine().split(",");
+        int i = 0;
+        for(int y = 0; y < map2.length; y++){
+          for(int x = 0; x < map2[0].length; x++){
+            map2[y][x] = data[i];
+            i++;
+          }
+        }
+    }
 
 }
