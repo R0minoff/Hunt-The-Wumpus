@@ -7,11 +7,6 @@ import java.util.ArrayList;
 // Hunt the Wumpus - Game Control Class
 import java.util.Scanner;
 
-import Cave.CellMap;
-import Player.Player;
-import apple.laf.JRSUIConstants.Direction;
-import javafx.scene.control.Cell;
-
 public class gameControl {
     ///////////////////////
     // Properties & Fields
@@ -28,47 +23,36 @@ public class gameControl {
 
     public gameControl() {
         numberOfPlayers = 0;
-        cellMap = new CellMap(new Cell(1)); 
-        player = new Player();
-        isGameOver = false;
-        isWumpusKilled = false;
+        isGameRunning = false;
+        this.scanner = new Scanner(System.in);
     }
-    private Cave.Cell getNextCell(Cell currentCell, Direction direction) {
-        ArrayList<Cave.Cell> adjacents = cellMap.allAjacents(currentCell);
-        int targetValue = -1;
-        switch (direction) {
-            case direction:
-                targetValue = cellMap.getUp(currentCell.getValue());
-                break;
-            case direction:
-                targetValue = cellMap.getDown(currentCell.getValue());
-                break;
-            case direction:
-                targetValue = cellMap.getUpLeft(currentCell.getValue());
-                break;
-            case direction:
-                targetValue = cellMap.getUpRight(currentCell.getValue());
-                break;
-        }
-
-        for (Cave.Cell cell : adjacents) {
-            if (cell.getValue() == targetValue) {
-                return cell;
-            }
-        }
-        return null;
-    }
-
 
     ///////////////////////
     // Methods
     //////////////////////
 
-    public boolean isGameOver() {
-        return isGameOver;
+    // Method to start the game
+    public void startGame() {
+
+
     }
 
-    public boolean isWumpusKilled() {
-        return isWumpusKilled;
+    // Method to end the game
+    public void endGame() {
+
     }
+
+    // Method to handle player input
+    public void handleInput() {
+
+    }
+
+    // Method to update game state
+    public void updateGameState() {
+
+    }
+
+    ///////////////////////
+    // Main method for testing
+    ///////////////////////
 }

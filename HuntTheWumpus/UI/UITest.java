@@ -1,125 +1,75 @@
-// Mateen and Eyouel 
-// February 12, 2024
-// Period 5
-// Hunt the Wumpus - User Interface Test Class
-
 package UI;
-
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;  
-import java.util.ArrayList;
+import java.awt.event.ActionListener;
 
-public class UITest extends javax.swing.JFrame implements ActionListener {
-    ///////////////////////
-    // Properties & Fields
-    //////////////////////
+public class UITest extends JFrame implements ActionListener {
 
-    
-    ///////////////////////
-    // Constructor(s)
-    //////////////////////
-    /*public UITest(){
-        JFrame f=new JFrame("Button Test");  
-        JButton b=new JButton("Click Here");  
-        b.setBounds(50,100,95,30);  
-        f.add(b);
-        f.setSize(400,400);  
-        f.setLayout(null);  
-        f.setVisible(true);  
-        
-        
-    }*/
-      /*public UITest(){
-    draw();
-  }
-  @SuppressWarnings("deprecation")
-public void draw(){
-    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLayout(null);
-    setSize(800,800);
+    private static final int HEX_SIZE = 50;
+    private static final int HEX_WIDTH = (int) (Math.sqrt(3) * HEX_SIZE);
+    private static final int HEX_HEIGHT = HEX_SIZE * 2;
+    private String number;
 
-
-  for(int x = 0; x <8; x++){
-    //JButton you = new JButton("!");
-    JFrame you = new JFrame("Jframe");
-    you.setBounds(x*50,0,50,50);
-    you.enable(false);
-    you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
-    add(you);
-  }
-  for(int x = 0; x <8; x++){
-    JButton you = new JButton("!");
-    you.setBounds(x*50,50,50,50);
-    you.enable(false);
-    you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
-    add(you);
+    public UITest() {
+        draw();
     }
-   
-    for(int x = 0; x <8; x++){
-      JButton you = new JButton("!");
-      you.setBounds(x*50,100,50,50);
-      you.enable(false);
-      you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
-      add(you);
-      }
-
-    setVisible(true);
-  }*/
-    public UITest(){
-    draw();
-        }
 
     ///////////////////////
     // Methods
     //////////////////////
-    @SuppressWarnings("deprecation")
-    public void draw(){
+
+    public void draw() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLayout(null);
-    setSize(800,800);
+        setLayout(null);
+        setSize(800, 800);
 
+        int buttonNumber = 1;
 
-  for(int x = 0; x <8; x++){
-    //JButton you = new JButton("!");
-    JButton you = new JButton("Jframe");
-    you.setBounds(x*50,0,50,50);
-    you.enable(false);
-    you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
-    add(you);
-  }
-  for(int x = 0; x <8; x++){
-    JButton you = new JButton("!");
-    you.setBounds(x*50,50,50,50);
-    you.enable(false);
-    you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
-    add(you);
-    //ActionEvent.Click(System.out.println("WE in DA SKY"));
+        // Pattern as shown in the image
+        int[][] pattern = {
+            {1, 2, 3, 4, 5, 6},
+            {7, 8, 9, 10, 11, 12},
+            {13, 14, 15, 16, 17, 18},
+            {19, 20, 21, 22, 23, 24},
+            {25, 26, 27, 28, 29, 30}
+          
+        };
+
+        for (int y = 0; y < pattern.length; y++) {
+            for (int x = 0; x < pattern[y].length; x++) {
+                if (pattern[y][x] != 0) { // Create buttons only for non-zero values
+                    addHexagonButton(x, y, pattern[y][x]);
+                }
+            }
+        }
+
+        setVisible(true);
     }
-   
-    for(int x = 0; x <8; x++){
-      JButton you = new JButton("!");
-      you.setBounds(x*50,100,50,50);
-      you.enable(false);
-      you.setBackground( (x%2 == 0)? Color.GRAY: Color.DARK_GRAY);
-      add(you);
-      }
-      
-    setVisible(true);
-  }
-    
-     
 
-    public static void main(String[] args)  {  
-       UITest varUITest =  new UITest();
-       varUITest.draw();
+    private void addHexagonButton(int x, int y, int number) {
+        HexagonButton button = new HexagonButton(String.valueOf(number));
+        int posX = x * (HEX_WIDTH * 3 / 4);
+        int posY = y * HEX_HEIGHT + (x % 2) * (HEX_HEIGHT / 2);
+        button.setBounds(posX, posY, HEX_WIDTH, HEX_HEIGHT);
+        button.setBackground(Color.WHITE);
+        button.addActionListener(this);
+        add(button);
+    }
+
+    public static void main(String[] args) {
+        new UITest();
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+        HexagonButton button = (HexagonButton) e.getSource();
+        this.number = button.getText();
+        System.out.println(number);
+    }
+    
+    public String getNumber(){
+        return this.number;
     }
 }

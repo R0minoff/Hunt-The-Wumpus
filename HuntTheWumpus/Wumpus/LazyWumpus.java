@@ -1,5 +1,5 @@
 // Amrit Gill
-// March 1, 2024
+// May 16, 2024
 // Period 5
 // Hunt the Wumpus - Lazy Wumpus Class
 
@@ -13,17 +13,18 @@ public class LazyWumpus {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    public gameLocations gL;
-    public Player p;
-    public int health = 1;
-    public Trivia t;
+    public int arrows = 3;
+    public int whealth = 1;
+    public int phealth = 1;
     private int numQ;
+    public int[] wumpusPos;
+    public int playerCorrect;
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
     public LazyWumpus(){
-        getLocation();
+        wumpusPos = new int[2];
     }
 
     ///////////////////////
@@ -31,7 +32,7 @@ public class LazyWumpus {
     //////////////////////
 
     public int[] getLocation(){
-        return gL.wumpusPos;
+        return wumpusPos;
     }
 
     // Precondition: the String state must be "asleep", "awake", or "moving"
@@ -40,13 +41,13 @@ public class LazyWumpus {
     }
 
     public void miss(){
-        if ((p.arrows == 2 && health != 0) | (p.arrows == 1 && health != 0) | (p.arrows == 0 && health != 0)){
-            gL.wumpusPos[0] += 2 | gL.wumpusPos[1] + 2;
+        if ((arrows == 2 && whealth != 0) | (arrows == 1 && whealth != 0) | (arrows == 0 && whealth != 0)){
+            wumpusPos[0] += 2 | wumpusPos[1] + 2;
         }
     }
 
     public boolean loseTrivia(){
-        if (t.askQuestions(numQ,3)){
+        if (playerCorrect == 3){
             return true;
         } else {
             return false;
@@ -54,7 +55,7 @@ public class LazyWumpus {
     }
 
     public boolean WumpusWins(){
-        if (health != 0 && p.death() == true){
+        if (whealth != 0 && playerDeath() == true){
             return true;
         } else {
             return false;
@@ -62,9 +63,18 @@ public class LazyWumpus {
     }
 
     public boolean WumpusLoses(){
-        if (health == 0){
+        if (whealth == 0){
             return true;
         } else{
+            return false;
+        }
+    }
+
+    // This method is for when the player dies
+    public boolean playerDeath(){
+        if (phealth == 0){
+            return true;
+        } else {
             return false;
         }
     }

@@ -36,7 +36,7 @@
  */
 
 package gameLocations;
-
+import Cave.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -53,19 +53,17 @@ public class gameLocations {
 
 
     /** Positions **/
-    public     int[] wumpusPos;
-    public     int[] playerPos;
-    public     int[] hazardPos;
-    
+    public     int wumpusPos;
+    public     int playerPos;
+    public   int[] hazardPos;
+
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
     public gameLocations() throws FileNotFoundException{
         hints     = new ArrayList<String>();
-        wumpusPos = new int[2];
-        playerPos = new int[2];
-        hazardPos = new int[2];
+        hazardPos = new int[4];
         initializeHints();
         //initializeCave();
     }
@@ -74,16 +72,23 @@ public class gameLocations {
     // Methods
     //////////////////////
 
-    public int[] findHazard(int[] pPos)
-    {
-        typeOfHazard = "";
-        giveWarning(typeOfHazard);
-        return hazardPos;
+    public void findHazard(int[] pPos, Cave cave){
+        Cell[][] map = cave.getMap();
+        ArrayList<Cell> adjRooms = cave.allAdjacents(map[pPos[0]][pPos[1]]);
+        for(Cell c : adjRooms){
+            if(c.getType() != ""){
+                System.out.println(giveWarning(c.getType()));
+            }
+        } 
     }
 
-    public int[] getWumpusLocation(){ return wumpusPos; }
+    public int getWumpusLocation(){ return wumpusPos; }
 
-    public int[] getPlayerLocation(){ return playerPos; }
+    public void setWumpusLocation(int newLoc){ wumpusPos = newLoc; }
+
+    public void setPlayerLocation(int newLoc){ playerPos = newLoc; }
+
+    public int getPlayerLocation(){ return playerPos; }
 
     public void initializeHints() throws FileNotFoundException{
         try{
@@ -91,7 +96,7 @@ public class gameLocations {
             Scanner readFile = new Scanner(data);
             while(readFile.hasNextLine()){
                 String currentLine = readFile.nextLine();
-                String[] splitLine = currentLine.split(",");
+                String[] splitLine = currentLine.split(",");    
                 hints.add(splitLine[3]);
             }
             readFile.close();
@@ -116,17 +121,42 @@ public class gameLocations {
         return warnType;
     }
 
-    public int shootArrow(int arrowCount){
-        boolean isValid = false; 
-        while(!isValid){
-        //TODO: Create findAdjacentRooms() Method for Valid Moves 
-            System.out.print("Where would you like to shoot?");
-            String direction = console.next();
+    public void initializeCave(Cave cave) {
+        Cell[][] map = cave.getMap();
+        int wumpusPlace = (int) (Math.random() * 31);
+        int bat1Place = (int) (Math.random() * 31);
+        int bat2Place = (int) (Math.random() * 31);
+        int pit1Place = (int) (Math.random() * 31);
+        int pit2Place = (int) (Math.random() * 31);
+        int count = 0;
+        for (int i = 0; i < map.length; i++) {
+          for (int j = 0; j < map[0].length; j++) {
+            count += 1;
+            if (count == wumpusPlace) {
+              map[i][j].setType("Wumpus");
+            } else if (count == bat1Place) {
+              while (bat1Place == wumpusPlace) {
+                bat1Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("SuperBats");
+            } else if (count == bat2Place) {
+              while (bat2Place == wumpusPlace) {
+                bat2Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("SuperBats");
+            } else if (count == pit1Place) {
+              while (pit1Place == wumpusPlace) {
+                pit1Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("Pit");
+            } else if (count == pit2Place) {
+              while (pit2Place == wumpusPlace) {
+                pit2Place = (int) (Math.random() * 31);
+              }
+              map[i][j].setType("Pit");
+            }
+          }
         }
-        arrowCount--;  
-        return arrowCount;
-    }
-
-    public void initializeCave(Cave cave){ }
+      }
 
 }

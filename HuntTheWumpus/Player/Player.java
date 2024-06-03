@@ -4,34 +4,41 @@
 // Hunt the Wumpus - Player Class
 
 package Player;
+import Cave.Cell;
 
 
 import java.util.Scanner;
-import java.io.FileNotFoundException;
 import java.util.Random;
 
 public class Player {
     ///////////////////////
     // Properties & Fields
     //////////////////////
-    private gameLocations gL;
-    private LazyWumpus lw;
     public String name;
     private boolean triviaAnswer;
     private int gold = 0;
     public int health = 1;
     public String choice;
     public int arrows = 3;
+    public int playerPos;
 
     ///////////////////////
     // Constructor(s)
     //////////////////////
-    public Player() throws FileNotFoundException{
-        gL = new gameLocations();
+    public Player(){
+    
     }
     ///////////////////////
     // Methods
     //////////////////////
+
+    public int setPlayerPos(int playerPos){
+        return this.playerPos = playerPos;
+    }
+
+    public int getPlayerPos(){
+        return playerPos;
+    }
 
     // This method gets the name of the Player
     public String getName(){
@@ -63,7 +70,7 @@ public class Player {
             }
         }
     }
-
+/* 
     // This method allows the player to choose which spot they would like to move to
     public void chooseMove(){
         Scanner s = new Scanner(System.in);
@@ -71,18 +78,17 @@ public class Player {
         choice = s.nextLine();
         if (choice.substring(0,1).equalsIgnoreCase("R")){
             move(choice.substring(0,1));
-            gL.playerPos[0]++;
+            playerPos[0]++;
         } else if (choice.substring(0,1).equalsIgnoreCase("L")){
             move(choice.substring(0,1));
-            gL.playerPos[0]--;
+            playerPos[0]--;
         } else if (choice.substring(0,1).equalsIgnoreCase("U")){
             move(choice.substring(0,1));
-            gL.playerPos[1]++;
+            playerPos[1]++;
         } else if (choice.substring(0,1).equalsIgnoreCase("D")){
             move(choice.substring(0,1));
-            gL.playerPos[1]--;
-        } else if(choice.substring(0,1).equalsIgnoreCase("S")){
-            gL.shootArrow(3);
+            playerPos[1]--;
+        } else if(choice.substring(0,1).equalsIgnoreCase("S")){    
             arrows--;
         }else {
             System.out.println();
@@ -91,10 +97,9 @@ public class Player {
             chooseMove();
         }
     }
-
-    // This method gets the location of the player
-    public int[] getLocation(){
-        return gL.playerPos;
+*/  
+    public void attack(Cell c){
+        arrows--;
     }
 
     // This method is for when the player takes damage
