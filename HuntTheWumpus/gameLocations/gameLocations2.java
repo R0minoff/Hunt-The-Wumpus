@@ -65,7 +65,7 @@ public class gameLocations2 {
     public     int[] hazardPos;
     public     int[] batsPos;
     public     int[] pitsPos;
-    private Cell[][] map = new Cell[5][6];;
+    private    Cell[][] map = new Cell[5][6];;
 
     ///////////////////////
     // Constructor(s)
