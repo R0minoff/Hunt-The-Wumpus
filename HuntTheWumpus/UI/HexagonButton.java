@@ -48,4 +48,7 @@ public class HexagonButton extends JButton {
 
         return new Polygon(xPoints, yPoints, 6);
     }
+    public static void main(String[] args) {
+        new MainMenu(args);
+    }
 }

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 
 public class MainMenu {
 
-    public static void main(String[] args) {
+    public MainMenu(String[] args) {
         JFrame frame = new JFrame("Hunt the Wumpus");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(400, 300);
@@ -30,5 +30,8 @@ public class MainMenu {
         });
 
         frame.setVisible(true);
+    }
+    public static void main(String[] args) {
+        new TriviaUI(args);
     }
 }

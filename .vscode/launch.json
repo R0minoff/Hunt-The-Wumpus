@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "HexagonButton",
+            "request": "launch",
+            "mainClass": "UI.HexagonButton",
+            "projectName": "Hunt-The-Wumpus_b08551d2"
+        },
+        {
+            "type": "java",
             "name": "MainMenu",
             "request": "launch",
             "mainClass": "UI.MainMenu",
