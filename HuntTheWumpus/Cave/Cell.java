@@ -182,5 +182,10 @@ public class Cell {
   public String toString(){
     return "" + getCellNum() + ":" + getInfoWalls(getWalls()) + ":" + getType();
   }
+
+  public int getValue() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getValue'");
+  }
   
 }

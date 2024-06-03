@@ -16,7 +16,7 @@ public class Trivia{
     // Properties & Fields
     //////////////////////
     private File file;
-    private ArrayList<Question> questions;
+    public ArrayList<Question> questions;
 
     /////////////////////
     // Constructor(s)
